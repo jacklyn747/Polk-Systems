@@ -66,8 +66,8 @@ body {
 
   .polk-grid-overlay {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
     background-size: calc(100% / 12) 100px;
     z-index: 5;
   }
@@ -82,8 +82,8 @@ body {
 
   .polk-architectural-grid {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
     background-size: calc(100% / 8) 250px;
   }
 
@@ -122,8 +122,8 @@ body {
   .polk-plus-marker::after {
     content: '';
     position: absolute;
-    background: currentColor;
-    opacity: 0.4;
+    background: white;
+    opacity: 0.6;
   }
 
   .polk-plus-marker::before {
