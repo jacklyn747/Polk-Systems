@@ -1,12 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { SpotlightGrid } from "@/components/ui/SpotlightGrid";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function Hero() {
     return (
         <section className="relative min-h-screen bg-brand-black text-brand-white pt-24 pb-12 overflow-hidden">
-            {/* Clean Architectural Grid (10% Opacity) */}
-            <div className="absolute inset-0 polk-architectural-grid opacity-10 pointer-events-none z-0"></div>
+            {/* Immersive Canvas Grid */}
+            <SpotlightGrid />
 
             <Container className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 h-full mt-4">
                 {/* Main Hero Card - Left Side */}
@@ -32,9 +34,11 @@ export function Hero() {
                                 <h3 className="text-2xl font-black uppercase tracking-tight">The Sovereign Collection</h3>
                                 <p className="text-brand-white/50 text-sm font-medium mt-2">Privacy built into every room.</p>
                             </div>
-                            <Link href="/manifesto" className="text-xs font-black uppercase tracking-widest bg-white text-black px-10 py-5 rounded-full hover:bg-brand-accent hover:text-white transition-all duration-500">
-                                Read our story
-                            </Link>
+                            <MagneticButton>
+                                <Link href="/manifesto" className="inline-block text-xs font-black uppercase tracking-widest bg-white text-black px-10 py-5 rounded-full hover:bg-brand-accent hover:text-white transition-all duration-500">
+                                    Read our story
+                                </Link>
+                            </MagneticButton>
                         </div>
                     </div>
                 </div>
