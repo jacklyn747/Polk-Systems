@@ -32,7 +32,7 @@ export const Header = () => {
                     <div className="flex gap-8">
                         <Link href="/" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">Home</Link>
                         <Link href="/story" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">Our Story</Link>
-                        <Link href="#how-it-works" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">How it Works</Link>
+                        <Link href="/how-it-works" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">How it Works</Link>
                         <Link href="#why-we-are-different" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">Why We're Different</Link>
                         <Link href="#the-process" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">The Process</Link>
                         <Link href="#get-in-touch" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">Get in Touch</Link>
