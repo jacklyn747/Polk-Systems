@@ -14,10 +14,10 @@ export function Footer() {
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-24 mb-32">
                     <div>
-                        <span className="text-brand-accent text-xs font-black tracking-[0.4em] uppercase opacity-60">[ 05 ] RETREAT_PROTOCOL</span>
+                        <span className="text-brand-accent text-xs font-black tracking-[0.4em] uppercase opacity-60">Connect</span>
                         <h2 className="text-5xl md:text-7xl font-black mt-8 uppercase tracking-tighter leading-[0.85]">
-                            Let's Keep In Touch<br />
-                            <span className="font-serif italic font-normal normal-case tracking-normal text-brand-accent">With Us</span>
+                            Let's build your <br />
+                            <span className="font-serif italic font-normal normal-case tracking-normal text-brand-accent">Sanctuary.</span>
                         </h2>
 
                         <div className="flex flex-col gap-8 max-w-md mt-16">
@@ -30,13 +30,13 @@ export function Footer() {
                             </div>
                             <div className="group relative">
                                 <input
-                                    type="tel"
-                                    placeholder="Your Inquiry"
+                                    type="text"
+                                    placeholder="How can we help?"
                                     className="w-full bg-transparent border-b border-white/10 py-6 text-brand-white focus:outline-none focus:border-brand-accent transition-all placeholder:text-white/20 font-bold uppercase text-xs tracking-widest"
                                 />
                             </div>
                             <button className="self-end mt-8 text-xs font-black uppercase tracking-[0.4em] hover:text-brand-accent transition-all group flex items-center gap-4">
-                                Submit Protocol <span className="group-hover:translate-x-2 transition-transform duration-500">↘</span>
+                                Send Message <span className="group-hover:translate-x-2 transition-transform duration-500">↘</span>
                             </button>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ export function Footer() {
                             <Link
                                 key={social.name}
                                 href={social.href}
-                                className="border border-white/5 aspect-square flex items-center justify-center hover:bg-brand-accent hover:text-black hover:border-brand-accent transition-all duration-700 text-[10px] font-black uppercase tracking-[0.3em] rounded-3xl group"
+                                className="border border-white/5 aspect-square flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-700 text-[10px] font-black uppercase tracking-[0.3em] rounded-3xl group shadow-premium"
                             >
                                 <span className="group-hover:scale-110 transition-transform">{social.name}</span>
                             </Link>
@@ -58,11 +58,11 @@ export function Footer() {
                     <div>© Polk Systems {new Date().getFullYear()}</div>
                     <div className="md:col-span-2 flex justify-center gap-12">
                         <div className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-brand-accent rounded-full animate-pulse" />
+                            <div className="w-1.5 h-1.5 bg-brand-accent rounded-full" />
                             <span>System Sovereign</span>
                         </div>
                     </div>
-                    <div className="flex gap-8 justify-end">
+                    <div className="flex gap-8 justify-end text-white/40">
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
                         <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
                     </div>

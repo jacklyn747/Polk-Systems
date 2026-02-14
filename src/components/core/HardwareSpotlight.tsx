@@ -9,29 +9,29 @@ import { Container } from '@/components/ui/Container';
 const products = [
     {
         id: "01",
-        name: "Cortex Node",
-        desc: "The central nervous system. Local compute, zero cloud sync.",
+        name: "The Core",
+        desc: "The brain of your home. Local compute, zero cloud sync.",
         image: "/nuc-polk.png",
         color: "bg-brand-dark-grey"
     },
     {
         id: "02",
-        name: "Sovereign Cam",
-        desc: "AES-256 encrypted local optics. No backdoors.",
+        name: "The Vision",
+        desc: "Encrypted optics. Your home has never looked safer.",
         image: "/prod-cam-orange.png",
         color: "bg-brand-black"
     },
     {
         id: "03",
-        name: "Bio-Light",
-        desc: "Circadian lighting via local hardware logic.",
+        name: "The Aura",
+        desc: "Lighting that understands your day, naturally.",
         image: "/prod-light-orange.png",
         color: "bg-brand-dark-grey"
     },
     {
         id: "04",
-        name: "The Vault",
-        desc: "Physical kill-switch and local biometric access.",
+        name: "The Portal",
+        desc: "Biometric access for physical peace of mind.",
         image: "/prod-lock-orange.png",
         color: "bg-brand-black"
     }
@@ -65,23 +65,23 @@ export const HardwareSpotlight = () => {
     return (
         <section id="how-it-works" ref={sectionRef} className="py-32 bg-brand-black text-brand-white">
             <Container>
-                <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-white/10 pb-12 gap-8">
                     <div>
-                        <span className="text-brand-accent text-xs font-black tracking-[0.4em] uppercase">[ 03 ] THE HARDWARE</span>
-                        <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tighter uppercase">Our Sovereign <br />Collection</h2>
+                        <span className="text-brand-accent text-xs font-black tracking-[0.4em] uppercase">How it works</span>
+                        <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tighter uppercase">Hardware for <br />the modern home.</h2>
                     </div>
-                    <div className="hidden md:block max-w-sm text-right">
+                    <div className="max-w-sm">
                         <p className="text-white/40 text-sm font-bold leading-relaxed uppercase">
-                            Every device is engineered for local-first autonomy. No subscriptions. No cloud dependency.
+                            Private by nature. Built for local autonomy. No subscriptions needed.
                         </p>
                     </div>
                 </div>
 
                 <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {products.map((product) => (
-                        <div key={product.id} className={`${product.color} rounded-[40px] aspect-[3/4] p-10 flex flex-col justify-between group cursor-pointer border border-white/5 hover:border-brand-accent/30 transition-all duration-700 relative overflow-hidden`}>
+                        <div key={product.id} className={`${product.color} rounded-[40px] aspect-[3/4] p-10 flex flex-col justify-between group cursor-pointer border border-white/5 hover:border-brand-accent/30 transition-all duration-700 relative overflow-hidden shadow-premium`}>
                             <div className="relative z-10">
-                                <span className="text-xs font-black tracking-widest opacity-40 uppercase group-hover:text-brand-accent group-hover:opacity-100 transition-colors">/{product.id}</span>
+                                <span className="text-xs font-black tracking-widest opacity-40 uppercase group-hover:text-brand-accent group-hover:opacity-100 transition-colors">{product.id}</span>
                                 <h3 className="text-2xl font-black mt-4 tracking-tight uppercase">{product.name}</h3>
                                 <p className="text-white/40 text-xs font-bold mt-4 leading-relaxed uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">{product.desc}</p>
                             </div>
@@ -98,8 +98,8 @@ export const HardwareSpotlight = () => {
                             </div>
 
                             <div className="relative z-10 flex justify-end">
-                                <span className="text-[10px] font-black tracking-[0.3em] uppercase border-b border-white/20 pb-2 group-hover:border-brand-accent transition-colors">
-                                    See More ↗
+                                <span className="text-[10px] font-black tracking-widest uppercase border-b border-white/20 pb-2 group-hover:border-brand-accent transition-colors">
+                                    Learn More ↗
                                 </span>
                             </div>
 
