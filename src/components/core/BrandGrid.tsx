@@ -1,55 +1,58 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Container } from '@/components/ui/Container';
 
 const brands = [
-    { name: "HomeKit", logo: "/Compatitble/Homekit.png" },
-    { name: "Matter", logo: "/Compatitble/Matter.png" },
-    { name: "Zigbee", logo: "/Compatitble/Z-Wave.png" }, // Using Z-Wave as Zigbee proxy if missing
-    { name: "Homebridge", logo: "/Compatitble/Homebridge.png" },
-    { name: "Hues", logo: "/Compatitble/Hues.png" },
-    { name: "Level", logo: "/Compatitble/Level.png" }
+    "HomeKit", "Matter", "Zigbee", "Z-Wave", "Homebridge",
+    "Home Assistant", "OpenHAB", "ESPHome", "Tasmota", "WLED",
+    "MQTT", "Node-RED", "Lutron", "Crestron", "Savant",
+    "Control4", "KNX", "DALI", "Modbus", "Sonos",
+    "Unifi", "Philips Hue", "Shelly", "Aqara", "Tuya",
+    "SmartThings", "Google Home", "Alexa", "Schlage",
+    "Yale", "August", "Kwikset", "Ecobee", "Nest",
+    "Reolink", "Amcrest", "Hikvision", "Dahua",
+    "Somfy", "Velux", "Hunter Douglas"
 ];
 
 export const BrandGrid = () => {
-    const sectionRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.fromTo(".brand-item",
-            { opacity: 0, scale: 0.9 },
-            {
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                stagger: 0.1,
-                ease: "expo.out",
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 80%",
-                }
-            }
-        );
-    }, []);
-
     return (
-        <section ref={sectionRef} className="py-24 bg-brand-black border-y border-white/5">
+        <section className="py-24 bg-brand-black border-y border-white/5 overflow-hidden relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-transparent to-brand-black z-10 pointer-events-none"></div>
+
             <Container>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-0">
+                <div className="flex flex-col items-center mb-12">
+                    <p className="text-white/40 text-xs font-bold tracking-[0.2em] uppercase mb-4">Trusted Integration</p>
+                </div>
+            </Container>
+
+            <div className="relative flex overflow-x-hidden group">
+                <div className="flex animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
+                    {/* First copy */}
                     {brands.map((brand, i) => (
-                        <div key={i} className="brand-item border-l border-white/10 last:border-r py-12 flex items-center justify-center grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer group">
-                            <div className="relative w-24 h-12">
-                                <span className="absolute inset-0 flex items-center justify-center text-[10px] font-black tracking-widest uppercase text-white/20 group-hover:text-brand-accent transition-colors">{brand.name}</span>
-                            </div>
+                        <div key={`a-${i}`} className="mx-8 md:mx-16 flex items-center justify-center">
+                            <span className="text-4xl md:text-6xl font-black uppercase text-white/10 tracking-tighter hover:text-brand-accent hover:opacity-100 transition-all duration-300 cursor-default select-none">
+                                {brand}
+                            </span>
+                        </div>
+                    ))}
+                    {/* Second copy for seamless loop */}
+                    {brands.map((brand, i) => (
+                        <div key={`b-${i}`} className="mx-8 md:mx-16 flex items-center justify-center">
+                            <span className="text-4xl md:text-6xl font-black uppercase text-white/10 tracking-tighter hover:text-brand-accent hover:opacity-100 transition-all duration-300 cursor-default select-none">
+                                {brand}
+                            </span>
                         </div>
                     ))}
                 </div>
-            </Container>
+
+                <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap group-hover:[animation-play-state:paused]">
+                    {/* Duplicate required for true infinite scroll if using the absolute position technique, 
+                         but with the flex 'marquee' animation, we usually just need the two sets inline.
+                         Let's stick to the simple flex version above and define the keyframes in globals.css 
+                     */}
+                </div>
+            </div>
         </section>
     );
 };
+
