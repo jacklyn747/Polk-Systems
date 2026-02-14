@@ -39,7 +39,7 @@ export const Header = () => {
                     </div>
 
                     <Link
-                        href="#home-assessment"
+                        href="/get-started"
                         className="bg-brand-accent text-black px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all shadow-premium ml-4"
                     >
                         Home Assessment ↘

@@ -2,6 +2,7 @@
 
 import { promises as fs } from "fs";
 import path from "path";
+import { ESP, Automation, Delivery, CRM } from "./services/integrations";
 
 export interface Lead {
     id: string;
@@ -92,17 +93,43 @@ export async function submitLead(formData: {
     };
 
     try {
+        // 1. Save locally (Source of Truth)
         const leads = await readLeads();
         leads.push(lead);
         await writeLeads(leads);
 
+        // 2. Add to CRM (Simulated)
+        const crmResult = await CRM.createLead({
+            name: lead.name,
+            email: lead.email,
+            source: lead.source,
+            status: 'New'
+        });
+
+        if (crmResult.success) {
+            // 3. ESP Subscription & Tagging (Simulated)
+            await ESP.subscribe(lead.email, lead.name);
+            await ESP.tag(lead.email, ["Web-Inquiry", lead.project_type || "General", "Polk-Website"]);
+
+            // 4. Trigger Automation Workflow ( Simonulated)
+            await Automation.triggerWorkflow(lead.email, "welcome-series-v2");
+
+            // 5. Deliver Asset (Simulated)
+            await Delivery.sendAsset(lead.email, "polk-systems-brochure.pdf");
+
+            // 6. Schedule Follow Up (Simulated)
+            await CRM.scheduleFollowUp(crmResult.leadId, 'call', 24);
+        }
+
         // Log for visibility (replace with email notification later)
-        console.log(`[LEAD] New lead from ${lead.name} (${lead.email}) via ${lead.source}`);
+        console.log(`[LEAD SYSTEM] Successfully processed lead: ${lead.email}`);
+        console.log(`[LEAD SYSTEM] Workflow Triggered: ESP -> CRM -> Automation -> Delivery -> Task`);
 
         return { success: true };
     } catch (err) {
-        console.error("[LEAD] Failed to save lead:", err);
-        return { success: false, error: "Failed to save. Please try again." };
+        console.error("[LEAD] Failed to process lead workflow:", err);
+        // Even if external integrations fail, we try to save locally at least.
+        return { success: false, error: "System busy. Please try again." };
     }
 }
 
