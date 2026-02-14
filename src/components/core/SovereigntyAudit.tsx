@@ -51,7 +51,7 @@ export const SovereigntyAudit = () => {
     };
 
     return (
-        <section className="relative overflow-hidden py-32 bg-white text-black min-h-screen flex items-center">
+        <section id="home-assessment" className="relative overflow-hidden py-32 bg-white text-black min-h-screen flex items-center">
             {/* Geometric Grid Overlay (Light) */}
             <div className="polk-grid-overlay-light absolute inset-0 opacity-10 pointer-events-none" />
 

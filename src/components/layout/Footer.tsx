@@ -10,7 +10,7 @@ const socialLinks = [
 
 export function Footer() {
     return (
-        <footer className="bg-brand-black text-brand-white border-t border-white/5 py-32">
+        <footer id="get-in-touch" className="bg-brand-black text-brand-white border-t border-white/5 py-32">
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-24 mb-32">
                     <div>
@@ -63,8 +63,8 @@ export function Footer() {
                         </div>
                     </div>
                     <div className="flex gap-8 justify-end">
-                        <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Terms</Link>
+                        <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+                        <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
                     </div>
                 </div>
             </Container>

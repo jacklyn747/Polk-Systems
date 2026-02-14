@@ -48,7 +48,7 @@ export const AtmosphericTrust = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-32 bg-brand-black text-brand-white border-t border-white/5">
+        <section id="why-we-are-different" ref={sectionRef} className="py-32 bg-brand-black text-brand-white border-t border-white/5">
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
                     {/* Left Side: Vunerabilities List (Figma FAQ Style) */}

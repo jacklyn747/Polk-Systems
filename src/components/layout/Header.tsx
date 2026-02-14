@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Container } from "@/components/ui/Container";
 
 export const Header = () => {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 30);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -16,40 +17,42 @@ export const Header = () => {
 
     return (
         <nav
-            style={{
-                position: 'fixed',
-                top: 0,
-                width: '100%',
-                zIndex: 100,
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: scrolled ? '1.5rem 5%' : '2.5rem 5%',
-                mixBlendMode: 'difference',
-                color: 'white',
-                transition: 'padding 0.4s ease-in-out'
-            }}
+            className={`fixed top-0 w-full z-[100] transition-all duration-500 border-b ${scrolled
+                ? "py-4 bg-brand-black/80 backdrop-blur-xl border-white/10"
+                : "py-8 bg-transparent border-transparent"
+                }`}
         >
-            <div style={{ fontWeight: '800', letterSpacing: '2px', fontSize: '1rem' }}>
-                <Link href="/">POLK SYSTEMS</Link>
-            </div>
-
-            <div style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', textTransform: 'uppercase', alignItems: 'center', fontWeight: '600', letterSpacing: '2px' }}>
-                <Link href="/technology" className="hover:opacity-50 transition-opacity">Technology</Link>
-                <Link href="#the-node" className="hover:opacity-50 transition-opacity">The Node</Link>
-                <Link
-                    href="/audit"
-                    style={{
-                        border: '1px solid white',
-                        padding: '0.6rem 1.5rem',
-                        borderRadius: '0px', // Palette uses sharp corners
-                        fontWeight: '700'
-                    }}
-                    className="hover:bg-white hover:text-black transition-all"
-                >
-                    Privacy Audit
+            <Container className="flex justify-between items-center">
+                <Link href="/" className="group">
+                    <div className="flex flex-col">
+                        <span className="text-xl font-black tracking-[-0.05em] uppercase text-white group-hover:text-brand-accent transition-colors">POLK</span>
+                        <span className="text-[0.6rem] font-black tracking-[0.4em] uppercase text-white/30 group-hover:text-white transition-colors -mt-1">SYSTEMS</span>
+                    </div>
                 </Link>
-            </div>
+
+                <div className="hidden lg:flex items-center gap-10">
+                    <div className="flex gap-8">
+                        <Link href="/" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">Home</Link>
+                        <Link href="#how-it-works" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">How it Works</Link>
+                        <Link href="#why-we-are-different" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">Why We're Different</Link>
+                        <Link href="#the-process" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">The Process</Link>
+                        <Link href="#get-in-touch" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-white transition-all">Get in Touch</Link>
+                    </div>
+
+                    <Link
+                        href="#home-assessment"
+                        className="bg-brand-accent text-black px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all shadow-[0_0_20px_#FF742544] hover:shadow-none ml-4"
+                    >
+                        Home Assessment ↘
+                    </Link>
+                </div>
+
+                {/* Mobile Menu Toggle (Simplified) */}
+                <button className="md:hidden flex flex-col gap-1.5 p-2">
+                    <div className="w-6 h-0.5 bg-white"></div>
+                    <div className="w-6 h-0.5 bg-brand-accent"></div>
+                </button>
+            </Container>
         </nav>
     );
 };

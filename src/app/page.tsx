@@ -3,6 +3,8 @@ import { Hero } from "@/components/Hero";
 import { AtmosphericTrust } from "@/components/core/AtmosphericTrust";
 import { HardwareSpotlight } from "@/components/core/HardwareSpotlight";
 import { BrandGrid } from "@/components/core/BrandGrid";
+import { BlueprintTechReveal } from "@/components/core/BlueprintTechReveal";
+import { ProcessSection } from "@/components/core/ProcessSection";
 import { SovereigntyAudit } from "@/components/core/SovereigntyAudit";
 import { Footer } from "@/components/layout/Footer";
 
@@ -14,19 +16,25 @@ export default function Home() {
       {/* 1. HERO: Full Bleed Sanctuary */}
       <Hero />
 
-      {/* 2. THE PROBLEM: The Surveillance Era (White) */}
+      {/* 2. WHY WE RE DIFFERENT: The Surveillance Era (White) */}
       <AtmosphericTrust />
 
-      {/* 3. THE SOLUTION: The Node (Dark) */}
+      {/* 3. HOW IT WORKS: The Node (Dark) */}
       <HardwareSpotlight />
 
       {/* 3.5 BRAND GRID: Local Compatibility */}
       <BrandGrid />
 
-      {/* 4. THE ACTION: Audit CTA (Light) */}
+      {/* 3.6 TECH REVEAL: Invisible Infrastructure */}
+      <BlueprintTechReveal />
+
+      {/* 3.7 THE PROCESS: Sovereignty Protocol */}
+      <ProcessSection />
+
+      {/* 4. HOME ASSESSMENT: Audit CTA (Light) */}
       <SovereigntyAudit />
 
-      {/* Footer */}
+      {/* Footer / GET IN TOUCH */}
       <Footer />
     </div>
   );

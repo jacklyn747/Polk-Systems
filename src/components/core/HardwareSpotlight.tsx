@@ -63,7 +63,7 @@ export const HardwareSpotlight = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-32 bg-brand-black text-brand-white">
+        <section id="how-it-works" ref={sectionRef} className="py-32 bg-brand-black text-brand-white">
             <Container>
                 <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-12">
                     <div>
