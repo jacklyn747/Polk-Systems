@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #0B0B0B;
+  --color-brand-dark-grey: #2A2A2A;
+  --color-brand-white: #ffffff;
+  --color-brand-accent: #FF7425;
+  --color-brand-text-muted: #999999;
+
+  --color-background: var(--color-brand-black);
+  --color-foreground: var(--color-brand-white);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-display: var(--font-playfair);
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 40px;
+
+  /* Glassmorphism Tokens */
+  --glass-blur: 16px;
+  --glass-border-opacity: 0.08;
+  --glass-bg-opacity: 0.6;
+  --glass-specular-opacity: 0.1;
+
+  /* Shadows */
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-premium: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer utilities {
+  .polk-glass {
+    background: rgba(26, 26, 26, var(--glass-bg-opacity));
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+    box-shadow: var(--shadow-glass);
+  }
+
+  .polk-glass-light {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  }
+
+  .polk-grid-overlay {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: calc(100% / 12) 100px;
+    z-index: 5;
+  }
+
+  .polk-grid-overlay-light {
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-size: calc(100% / 12) 100px;
+    z-index: 5;
+  }
+
+  .polk-architectural-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: calc(100% / 8) 250px;
+  }
+
+  .polk-hero-title {
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 0.8;
+    letter-spacing: -0.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.15);
+    mix-blend-mode: overlay;
+  }
+
+  .polk-side-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .polk-plus-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 40;
+  }
+
+  .polk-plus-marker::before,
+  .polk-plus-marker::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    opacity: 0.4;
+  }
+
+  .polk-plus-marker::before {
+    width: 1px;
+    height: 100%;
+  }
+
+  .polk-plus-marker::after {
+    width: 100%;
+    height: 1px;
+  }
+
+  .polk-grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .polk-grid-container-light {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .polk-grid-cell {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .polk-grid-cell-light {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .polk-glow-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .polk-glow-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 116, 37, 0.4), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .polk-glow-line:hover::after {
+    left: 100%;
+  }
+
+  @keyframes pulse-green {
+    0% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+      box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+  }
+
+  .pulse-dot {
+    animation: pulse-green 2s infinite;
+  }
+}
