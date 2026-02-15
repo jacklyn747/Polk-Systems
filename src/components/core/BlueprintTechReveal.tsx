@@ -1,72 +1,91 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Container } from '@/components/ui/Container';
+import Image from 'next/image';
 
 export const BlueprintTechReveal = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const xrayRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
+    const realisticRef = useRef<HTMLDivElement>(null);
+    const wireframeRef = useRef<HTMLDivElement>(null);
+    const scanLineRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        if (!containerRef.current || !xrayRef.current) return;
+        if (!sectionRef.current || !realisticRef.current || !wireframeRef.current || !scanLineRef.current) return;
 
-        // X-Ray Wipe Scroll Animation
-        gsap.to(xrayRef.current, {
-            clipPath: "inset(0% 0% 0% 0%)",
-            ease: "none",
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top center",
-                end: "bottom center",
-                scrub: true,
-            }
-        });
+        const ctx = gsap.context(() => {
+            // Pin the section
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top top",
+                    end: "+=800%", // Significantly longer scroll distance (8x)
+                    pin: true,
+                    scrub: 1,
+                }
+            });
+
+            // The Reveal Animation
+            tl.fromTo(wireframeRef.current,
+                { clipPath: "inset(0% 0% 100% 0%)" },
+                { clipPath: "inset(0% 0% 0% 0%)", duration: 2, ease: "none" } // Slower relative to total time
+            )
+                .to(scanLineRef.current,
+                    { top: "100%", duration: 2, ease: "none" },
+                    "<"
+                )
+                // HOLD PHASE: Keep the wireframe visible for 33% of the scroll distance
+                .to({}, { duration: 1 });
+
+        }, sectionRef);
+
+        return () => ctx.revert();
     }, []);
 
     return (
-        <section ref={containerRef} className="relative h-[80vh] w-full bg-black overflow-hidden border-y border-white/10">
-
-            {/* The "Normal" High-End Photo Layer */}
-            <div className="absolute inset-0 z-10 grayscale-[0.5]">
-                <img
-                    src="/hero-ultra-hd.png"
-                    alt="Luxury Interior"
-                    className="w-full h-full object-cover"
+        <section ref={sectionRef} className="relative h-screen bg-black overflow-hidden">
+            {/* 1. Base Layer: Realistic Home */}
+            <div ref={realisticRef} className="absolute inset-0 z-10">
+                <Image
+                    src="/hero-realistic.png"
+                    alt="Polk Home Realistic"
+                    fill
+                    className="object-cover"
+                    priority
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/40" /> {/* Dimmer */}
             </div>
 
-            {/* The "Technical" Blueprint Layer (Revealed via ClipPath) */}
+            {/* 2. Top Layer: Wireframe Blueprint (Revealed via ClipPath) */}
+            <div ref={wireframeRef} className="absolute inset-0 z-20 bg-black">
+                <Image
+                    src="/hero-wireframe.png"
+                    alt="Polk Home Wireframe"
+                    fill
+                    className="object-cover opacity-80"
+                    priority
+                />
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay" /> {/* Blueprint Tint */}
+            </div>
+
+            {/* 3. The Scanning Laser Line */}
             <div
-                ref={xrayRef}
-                className="absolute inset-0 z-20 overflow-hidden"
-                style={{ clipPath: "inset(0% 100% 0% 0%)" }} // Starts hidden from right
-            >
-                <div className="w-full h-full bg-brand-black polk-grid-overlay opacity-60" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    {/* Simplified Labels */}
-                    <div className="absolute top-1/4 left-1/4 p-4 border border-brand-accent/20 text-brand-accent font-black text-[0.6rem] tracking-widest uppercase bg-black/40 backdrop-blur-sm rounded-full px-6">
-                        Smart Climate
-                    </div>
-                    <div className="absolute bottom-1/4 right-1/4 p-4 border border-brand-accent/20 text-brand-accent font-black text-[0.6rem] tracking-widest uppercase bg-black/40 backdrop-blur-sm rounded-full px-6">
-                        Secure Signal
-                    </div>
-                </div>
-            </div>
+                ref={scanLineRef}
+                className="absolute left-0 right-0 h-2 bg-brand-accent z-30 shadow-[0_0_50px_4px_rgba(255,87,34,0.8)]"
+                style={{ top: "0%" }}
+            />
 
-            {/* Label Blocks */}
-            <div className="absolute top-12 left-12 z-30 flex flex-col gap-1">
-                <span className="text-brand-accent font-black text-[0.7rem] tracking-widest uppercase">The System</span>
-                <h3 className="text-white text-4xl md:text-5xl font-black uppercase tracking-tighter">What you don't <br /> see matters.</h3>
-            </div>
-
-            <div className="absolute bottom-12 right-12 z-30 text-white/40 text-[0.6rem] font-bold tracking-[0.3em] uppercase">
-                Scroll to explore
-            </div>
-
+            {/* 4. Text Overlay (Optional, sits on top) */}
+            <Container className="relative z-40 h-full flex flex-col justify-center pointer-events-none">
+                <h2 className="text-8xl text-white font-black uppercase tracking-tighter mix-blend-difference">
+                    See the <br />
+                    <span className="text-brand-accent">Unseen.</span>
+                </h2>
+            </Container>
         </section>
     );
 };

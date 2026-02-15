@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { AtmosphericTrust } from "@/components/core/AtmosphericTrust";
 import { HardwareSpotlight } from "@/components/core/HardwareSpotlight";
 import { BrandGrid } from "@/components/core/BrandGrid";
-import { BlueprintTechReveal } from "@/components/core/BlueprintTechReveal";
+
 import { ProcessSection } from "@/components/core/ProcessSection";
 import { SovereigntyAudit } from "@/components/core/SovereigntyAudit";
 import { Footer } from "@/components/layout/Footer";
@@ -25,8 +25,7 @@ export default function Home() {
       {/* 3.5 BRAND GRID: Local Compatibility */}
       <BrandGrid />
 
-      {/* 3.6 TECH REVEAL: Invisible Infrastructure */}
-      <BlueprintTechReveal />
+
 
       {/* 3.7 THE PROCESS: Sovereignty Protocol */}
       <ProcessSection />
