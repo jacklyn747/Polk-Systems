@@ -40,7 +40,7 @@ export default function StoryPage() {
                                 />
                                 <div className="flex items-baseline gap-4 flex-wrap">
                                     <TechnicalHeading
-                                        text="with a"
+                                        text="with my"
                                         className="text-6xl md:text-7xl lg:text-[5.5rem]"
                                         delay={0.4}
                                     />

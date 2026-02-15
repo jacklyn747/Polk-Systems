@@ -13,7 +13,7 @@ export default function ControlPage() {
             {/* Background Texture */}
             <div className="fixed inset-0 polk-architectural-grid opacity-10 pointer-events-none z-0" />
 
-            <main className="pt-48 pb-32 relative z-10">
+            <div className="pt-48 pb-32 relative z-10">
                 <Container>
                     <div className="mb-24">
                         <Breadcrumb />
@@ -28,7 +28,7 @@ export default function ControlPage() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-16 border-t border-white/10 pt-16">
                         <div className="md:col-span-4">
                             <span className="text-brand-accent text-[10px] font-black uppercase tracking-widest mb-4 block">Phase Four</span>
-                            <p className="text-lg text-white/40 leading-relaxed font-medium">
+                            <p className="text-lg text-white/60 leading-relaxed font-medium">
                                 This is the final handoff. We give you full administrative access to your system. We do not keep backdoors. It is your sovereign territory.
                             </p>
                         </div>
@@ -54,7 +54,7 @@ export default function ControlPage() {
 
                     <div className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
                         <div className="p-12 bg-white/5 flex flex-col justify-center">
-                            <Link href="/process/activate" className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+                            <Link href="/process/activate" className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-white/60 hover:text-white transition-colors">
                                 <span className="group-hover:-translate-x-2 transition-transform">←</span> Return to Activate
                             </Link>
                         </div>
@@ -67,7 +67,7 @@ export default function ControlPage() {
                         </div>
                     </div>
                 </Container>
-            </main>
+            </div>
 
             <Footer />
         </div>

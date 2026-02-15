@@ -109,14 +109,14 @@ export default function WhyWereDifferentPage() {
                                             <point.icon className="w-12 h-12 text-brand-accent" strokeWidth={1} />
                                         </div>
 
-                                        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mb-12 group-hover:text-brand-accent transition-colors">{point.feature}</h3>
+                                        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-12 group-hover:text-brand-accent transition-colors">{point.feature}</h3>
 
                                         <div className="mb-8">
                                             <div className="flex items-center gap-2 mb-2">
                                                 <X className="w-3 h-3 text-red-500" />
                                                 <span className="text-[8px] font-black uppercase tracking-widest text-white/20">Standard</span>
                                             </div>
-                                            <p className="text-white/40 text-sm font-bold uppercase tracking-tight">{point.standard}</p>
+                                            <p className="text-white/60 text-sm font-bold uppercase tracking-tight">{point.standard}</p>
                                         </div>
 
                                         <div>
@@ -145,7 +145,7 @@ export default function WhyWereDifferentPage() {
                                 <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-[0.85]">
                                     You are not<br />the product.
                                 </h2>
-                                <p className="text-white/40 text-lg font-medium leading-relaxed mb-8">
+                                <p className="text-white/60 text-lg font-medium leading-relaxed mb-8">
                                     When you buy a Google or Amazon device, you are paying them to spy on you. They subsidize the hardware costs by harvesting your behavioral data.
                                 </p>
                                 <p className="text-brand-white text-[10px] font-black uppercase tracking-widest leading-loose border-l border-brand-accent/30 pl-8">
@@ -165,7 +165,7 @@ export default function WhyWereDifferentPage() {
                                 <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-[0.85]">
                                     Built for<br />Decades.
                                 </h2>
-                                <p className="text-white/40 text-lg font-medium leading-relaxed mb-8">
+                                <p className="text-white/60 text-lg font-medium leading-relaxed mb-8">
                                     Consumer tech is designed to be replaced every 2 years. We engineer systems like home infrastructure—meant to last as long as your copper pipes or electrical wiring.
                                 </p>
                                 <p className="text-brand-white text-[10px] font-black uppercase tracking-widest leading-loose md:border-r border-l md:border-l-0 border-brand-accent/30 md:pr-8 pl-8 md:pl-0">

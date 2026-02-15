@@ -78,7 +78,7 @@ export const ProcessSection = () => {
                         <Link href={step.href} key={step.id} className="process-step polk-hover-line group p-12 lg:p-16 border-r border-white/10 last:border-r-0 border-b lg:border-b-0 hover:bg-white/5 transition-all duration-500 flex flex-col h-full relative overflow-hidden">
                             <div className="polk-hover-line-content flex flex-col h-full">
                                 <span className="text-brand-accent text-[10px] font-black tracking-[0.3em] uppercase mb-16 block">Phase_{step.id}</span>
-                                <h3 className="text-3xl font-black uppercase tracking-tight mb-6 mt-auto text-white/40 group-hover:text-white transition-colors">
+                                <h3 className="text-3xl font-black uppercase tracking-tight mb-6 mt-auto text-white/60 group-hover:text-white transition-colors">
                                     {step.title}
                                 </h3>
                                 <p className="text-white/30 text-[10px] font-black leading-loose uppercase tracking-widest group-hover:text-white/60 transition-colors">

@@ -50,20 +50,24 @@ export function Footer() {
 
                         <div className="flex flex-col gap-8 max-w-md mt-16">
                             <div className="group relative">
+                                <label htmlFor="footer-email" className="sr-only">Email address</label>
                                 <input
+                                    id="footer-email"
                                     type="email"
                                     placeholder="Email address"
-                                    className="w-full bg-transparent border-b border-white/10 py-6 text-brand-white focus:outline-none focus:border-brand-accent transition-all placeholder:text-white/20 font-bold uppercase text-xs tracking-widest"
+                                    className="w-full bg-transparent border-b border-white/10 py-6 text-brand-white focus-visible:outline-none focus-visible:border-brand-accent transition-all placeholder:text-white/20 font-bold uppercase text-xs tracking-widest"
                                 />
                             </div>
                             <div className="group relative">
+                                <label htmlFor="footer-message" className="sr-only">How can we help?</label>
                                 <input
+                                    id="footer-message"
                                     type="text"
                                     placeholder="How can we help?"
-                                    className="w-full bg-transparent border-b border-white/10 py-6 text-brand-white focus:outline-none focus:border-brand-accent transition-all placeholder:text-white/20 font-bold uppercase text-xs tracking-widest"
+                                    className="w-full bg-transparent border-b border-white/10 py-6 text-brand-white focus-visible:outline-none focus-visible:border-brand-accent transition-all placeholder:text-white/20 font-bold uppercase text-xs tracking-widest"
                                 />
                             </div>
-                            <button className="self-end mt-8 text-xs font-black uppercase tracking-[0.4em] hover:text-brand-accent transition-all group flex items-center gap-4">
+                            <button aria-label="Send message" className="self-end mt-8 text-xs font-black uppercase tracking-[0.4em] hover:text-brand-accent transition-all group flex items-center gap-4">
                                 Send Message <span className="group-hover:translate-x-2 transition-transform duration-500">↘</span>
                             </button>
                         </div>
@@ -139,7 +143,7 @@ export function Footer() {
                             <span>System Sovereign</span>
                         </div>
                     </div>
-                    <div className="flex gap-8 justify-end text-white/40">
+                    <div className="flex gap-8 justify-end text-white/60">
                         {socialLinks.map((social) => (
                             <a
                                 key={social.name}

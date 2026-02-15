@@ -119,7 +119,7 @@ export const AtmosphericTrust = () => {
                                 Absolute <br />
                                 <span className="text-white/20">Sovereignty.</span>
                             </h2>
-                            <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose max-w-lg mb-12">
+                            <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose max-w-lg mb-12">
                                 We built Polk for the moments that matter most. <br />
                                 Private by nature. Built for local autonomy.
                             </p>
@@ -137,7 +137,7 @@ export const AtmosphericTrust = () => {
                                                 {p.title}
                                             </h3>
                                         </div>
-                                        <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose max-w-md">
+                                        <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose max-w-md">
                                             {p.desc}
                                         </p>
                                     </div>

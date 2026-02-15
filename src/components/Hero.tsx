@@ -92,7 +92,7 @@ export function Hero() {
                     {/* Top Meta Bar */}
                     <div className="border-b border-white/10 p-8 flex justify-between items-center bg-black/20 backdrop-blur-sm z-30">
                         <SystemStatus progress={scrollProgress} />
-                        <div className="hidden lg:flex items-center gap-8 text-[10px] font-black tracking-widest text-white/40 uppercase">
+                        <div className="hidden lg:flex items-center gap-8 text-[10px] font-black tracking-widest text-white/60 uppercase">
                             <span>COORDS: 40.7128° N, 74.0060° W</span>
                             <span>VERSION: 2.0.4-STABLE</span>
                         </div>
@@ -130,7 +130,7 @@ export function Hero() {
                         <div className="flex flex-col md:flex-row gap-12 items-baseline max-w-4xl">
                             <div className="flex-1">
                                 <h3 className="text-2xl font-black uppercase tracking-tight mb-4">The Sovereign Collection</h3>
-                                <p className="text-white/40 text-xs font-bold leading-loose uppercase tracking-widest max-w-md">
+                                <p className="text-white/60 text-xs font-bold leading-loose uppercase tracking-widest max-w-md">
                                     Privacy is no longer a feature. <br />
                                     It is the foundation of the modern sanctuary. <br />
                                     Built for local autonomy.
@@ -159,7 +159,7 @@ export function Hero() {
                             The Local <br />
                             <span className="text-white/20">Brain.</span>
                         </h2>
-                        <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose max-w-[200px]">
+                        <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose max-w-[200px]">
                             No WiFi needed for core privacy. Your data stays on-prem.
                         </p>
                         <div className="absolute bottom-12 right-12 text-2xl font-light opacity-0 group-hover:opacity-100 transition-opacity">↗</div>

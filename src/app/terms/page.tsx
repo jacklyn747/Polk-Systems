@@ -35,14 +35,14 @@ export default function TermsPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                                 <section>
                                     <h2 className="text-[10px] font-black uppercase tracking-widest text-brand-accent mb-6">01. Local Autonomy</h2>
-                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/40">
+                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/60">
                                         You are responsible for the physical security of your Cortex Node. Loss of the physical hardware may result in the loss of encrypted data if local backups are not maintained.
                                     </p>
                                 </section>
 
                                 <section>
                                     <h2 className="text-[10px] font-black uppercase tracking-widest text-brand-accent mb-6">02. Zero-Access Guarantee</h2>
-                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/40">
+                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/60">
                                         Polk Systems cannot reset your passwords or recover your video feeds. Encryption happens at the edge, on your hardware.
                                     </p>
                                 </section>

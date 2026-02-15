@@ -60,7 +60,7 @@ export default function SystemPage() {
                                 Local Force.<br />
                                 <span className="text-white/20">Zero Cloud.</span>
                             </h2>
-                            <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose max-w-lg mb-8">
+                            <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose max-w-lg mb-8">
                                 Because your data is local, it is instantly accessible. If you need to know what happened yesterday, you don’t need to submit a request to a cloud provider. You own the history. You hold the keys.
                             </p>
                         </div>
@@ -78,7 +78,7 @@ export default function SystemPage() {
                                 Efficiency <br />
                                 <span className="text-white/20">By Design.</span>
                             </h2>
-                            <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose max-w-lg mb-8">
+                            <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose max-w-lg mb-8">
                                 The system knows which rooms are empty and which need warmth. It micro-adjusts your climate and lighting in real-time, drastically reducing energy waste without you ever touching a switch.
                             </p>
                         </div>

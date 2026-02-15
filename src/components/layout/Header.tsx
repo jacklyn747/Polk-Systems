@@ -144,7 +144,7 @@ export const Header = () => {
                                         <motion.div key={link.name} variants={linkVariants}>
                                             <Link
                                                 href={link.href}
-                                                className={`text-3xl sm:text-4xl font-black uppercase tracking-tight transition-all duration-500 block ${pathname === link.href ? "text-white" : "text-white/40 hover:text-white"}`}
+                                                className={`text-3xl sm:text-4xl font-black uppercase tracking-tight transition-all duration-500 block ${pathname === link.href ? "text-white" : "text-white/60 hover:text-white"}`}
                                             >
                                                 {link.name}
                                             </Link>

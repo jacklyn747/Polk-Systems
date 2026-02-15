@@ -55,7 +55,7 @@ export default function HowItWorksPage() {
                                 Not Gadgets. <br />
                                 <span className="text-brand-accent">Infrastructure.</span>
                             </h2>
-                            <div className="space-y-6 text-lg text-white/40 font-medium leading-relaxed">
+                            <div className="space-y-6 text-lg text-white/60 font-medium leading-relaxed">
                                 <p>
                                     Buying a dozen "smart" lightbulbs doesn't make a smart home. It makes a maintenance headache.
                                 </p>
@@ -106,7 +106,7 @@ export default function HowItWorksPage() {
                         <div className="group p-12 bg-brand-black hover:bg-white/[0.03] transition-colors duration-500">
                             <span className="text-[10px] font-black uppercase tracking-widest text-white/20 mb-12 block group-hover:text-brand-accent transition-colors">01. The Local Brain</span>
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 text-brand-white leading-none">Zero Cloud.<br />Zero Lag.</h3>
-                            <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose">
+                            <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
                                 Your home runs on a dedicated, physical server inside your utility closet. No internet required for daily operation. When you press a switch, the lights turn on instantly—even if the WiFi is down.
                             </p>
                         </div>
@@ -115,7 +115,7 @@ export default function HowItWorksPage() {
                         <div className="group p-12 bg-brand-black hover:bg-white/[0.03] transition-colors duration-500">
                             <span className="text-[10px] font-black uppercase tracking-widest text-white/20 mb-12 block group-hover:text-brand-accent transition-colors">02. The Unified Logic</span>
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 text-brand-white leading-none">One App.<br />Not Twenty.</h3>
-                            <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose">
+                            <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
                                 We integrate everything—lighting, climate, security, audio—into a single, elegant dashboard. No more "app fatigue." Just one simple interface that anyone in the family can use.
                             </p>
                         </div>
@@ -124,7 +124,7 @@ export default function HowItWorksPage() {
                         <div className="group p-12 bg-brand-black hover:bg-white/[0.03] transition-colors duration-500">
                             <span className="text-[10px] font-black uppercase tracking-widest text-white/20 mb-12 block group-hover:text-brand-accent transition-colors">03. The Sovereign Data</span>
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 text-brand-white leading-none">Your Business.<br />Stay Yours.</h3>
-                            <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose">
+                            <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
                                 Traditional smart cameras stream video to corporate servers. Ours record to your local hard drive. No monthly fees, no data mining, and no creepy privacy violations.
                             </p>
                         </div>
@@ -133,7 +133,7 @@ export default function HowItWorksPage() {
                     <div className="mt-12 text-right">
                         <Link
                             href="/technology"
-                            className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-brand-accent transition-colors group"
+                            className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/60 hover:text-brand-accent transition-colors group"
                         >
                             Deep Dive Into Our Technology <span className="group-hover:translate-x-2 transition-transform duration-500">↘</span>
                         </Link>

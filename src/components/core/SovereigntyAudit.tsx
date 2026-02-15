@@ -93,7 +93,7 @@ export const SovereigntyAudit = () => {
                             {Math.round((score / (questions.length * 100)) * 100)}% <br />
                             <span className="text-white/20">Private_</span>
                         </h2>
-                        <p className="text-white/40 text-[10px] font-black mt-12 max-w-lg mx-auto leading-loose uppercase tracking-widest">
+                        <p className="text-white/60 text-[10px] font-black mt-12 max-w-lg mx-auto leading-loose uppercase tracking-widest">
                             Your result was calculated right here. <br />
                             Nothing was sent to our servers.
                         </p>

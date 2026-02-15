@@ -103,7 +103,7 @@ export default function ProcessPage() {
                                     <h3 className="text-3xl font-black uppercase tracking-tight mb-8 flex items-center gap-4">
                                         {step.title}
                                     </h3>
-                                    <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose">
+                                    <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
                                         {step.description}
                                     </p>
                                 </div>
@@ -137,7 +137,7 @@ export default function ProcessPage() {
                             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none">
                                 Zero Stress.<br />Guaranteed.
                             </h2>
-                            <p className="text-white/40 text-lg font-medium leading-relaxed">
+                            <p className="text-white/60 text-lg font-medium leading-relaxed">
                                 We are so confident in our engineering process that we offer the industry's most comprehensive support package. If a component fails within the first year, we replace it. If the software glitches, we fix it remote-instantly.
                             </p>
                         </div>

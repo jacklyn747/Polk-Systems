@@ -13,7 +13,7 @@ export default function DiscoverPage() {
             {/* Background Texture */}
             <div className="fixed inset-0 polk-architectural-grid opacity-10 pointer-events-none z-0" />
 
-            <main className="pt-48 pb-32 relative z-10">
+            <div className="pt-48 pb-32 relative z-10">
                 <Container>
                     <div className="mb-24">
                         <Breadcrumb />
@@ -28,7 +28,7 @@ export default function DiscoverPage() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-16 border-t border-white/10 pt-16">
                         <div className="md:col-span-4">
                             <span className="text-brand-accent text-[10px] font-black uppercase tracking-widest mb-4 block">Phase One</span>
-                            <p className="text-lg text-white/40 leading-relaxed font-medium">
+                            <p className="text-lg text-white/60 leading-relaxed font-medium">
                                 We begin with a comprehensive audit of your digital and physical environment. We map your lifestyle patterns, analyze your electrical infrastructure, and identify potential privacy vulnerabilities.
                             </p>
                         </div>
@@ -58,7 +58,7 @@ export default function DiscoverPage() {
                         </Link>
                     </div>
                 </Container>
-            </main>
+            </div>
 
             <Footer />
         </div>

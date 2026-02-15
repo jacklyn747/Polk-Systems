@@ -35,28 +35,28 @@ export default function PrivacyPolicyPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                                 <section>
                                     <h2 className="text-[10px] font-black uppercase tracking-widest text-brand-accent mb-6">01. Data Collection</h2>
-                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/40">
+                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/60">
                                         Our smart home systems process all data locally on-premise. No behavioral data, sensor readings, or home usage patterns are transmitted to external servers. When you submit forms on this website, we collect only the information you explicitly provide to respond to your inquiry.
                                     </p>
                                 </section>
 
                                 <section>
                                     <h2 className="text-[10px] font-black uppercase tracking-widest text-brand-accent mb-6">02. Local Processing</h2>
-                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/40">
+                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/60">
                                         Polk Systems hardware runs entirely on a local server in your home. Voice commands, motion patterns, climate preferences, and security logs never leave your premises. You maintain full ownership and access to all system-generated data.
                                     </p>
                                 </section>
 
                                 <section>
                                     <h2 className="text-[10px] font-black uppercase tracking-widest text-brand-accent mb-6">03. Third Parties</h2>
-                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/40">
+                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/60">
                                         We do not sell, rent, or share personal information with third parties for marketing purposes. Hardware integrations with third-party devices are configured to communicate directly with your local Polk Core, not external cloud services.
                                     </p>
                                 </section>
 
                                 <section>
                                     <h2 className="text-[10px] font-black uppercase tracking-widest text-brand-accent mb-6">04. Contact</h2>
-                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/40">
+                                    <p className="text-sm font-black uppercase tracking-widest leading-loose text-white/60">
                                         For privacy-related inquiries, reach us at{" "}
                                         <a href="mailto:hello@polksystems.com" className="text-brand-accent hover:text-white transition-colors">
                                             hello@polksystems.com

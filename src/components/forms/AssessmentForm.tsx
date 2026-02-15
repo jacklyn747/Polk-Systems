@@ -176,14 +176,14 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                         type="button"
                                         onClick={() => update("project_type", pt.value)}
                                         className={`text-left border p-6 transition-all duration-200 group ${data.project_type === pt.value
-                                                ? "border-brand-accent bg-brand-accent/5"
-                                                : "border-white/10 hover:border-white/30"
+                                            ? "border-brand-accent bg-brand-accent/5"
+                                            : "border-white/10 hover:border-white/30"
                                             }`}
                                     >
                                         <Icon
                                             className={`w-6 h-6 mb-4 ${data.project_type === pt.value
-                                                    ? "text-brand-accent"
-                                                    : "text-brand-text-muted group-hover:text-brand-white"
+                                                ? "text-brand-accent"
+                                                : "text-brand-text-muted group-hover:text-brand-white"
                                                 } transition-colors`}
                                         />
                                         <span className="block font-display text-lg text-brand-white mb-1">
@@ -221,8 +221,8 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                             type="button"
                                             onClick={() => update("home_size", size)}
                                             className={`border p-4 font-sans text-sm transition-all ${data.home_size === size
-                                                    ? "border-brand-accent text-brand-white bg-brand-accent/5"
-                                                    : "border-white/10 text-brand-text-muted hover:border-white/30"
+                                                ? "border-brand-accent text-brand-white bg-brand-accent/5"
+                                                : "border-white/10 text-brand-text-muted hover:border-white/30"
                                                 }`}
                                         >
                                             {size}
@@ -242,8 +242,8 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                             type="button"
                                             onClick={() => update("room_count", count)}
                                             className={`border p-4 font-sans text-sm transition-all ${data.room_count === count
-                                                    ? "border-brand-accent text-brand-white bg-brand-accent/5"
-                                                    : "border-white/10 text-brand-text-muted hover:border-white/30"
+                                                ? "border-brand-accent text-brand-white bg-brand-accent/5"
+                                                : "border-white/10 text-brand-text-muted hover:border-white/30"
                                                 }`}
                                         >
                                             {count}
@@ -263,8 +263,8 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                             type="button"
                                             onClick={() => update("property_type", type)}
                                             className={`border p-4 font-sans text-sm transition-all ${data.property_type === type
-                                                    ? "border-brand-accent text-brand-white bg-brand-accent/5"
-                                                    : "border-white/10 text-brand-text-muted hover:border-white/30"
+                                                ? "border-brand-accent text-brand-white bg-brand-accent/5"
+                                                : "border-white/10 text-brand-text-muted hover:border-white/30"
                                                 }`}
                                         >
                                             {type}
@@ -292,8 +292,8 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                     type="button"
                                     onClick={() => toggleSystem(sys.value)}
                                     className={`border p-5 text-left transition-all duration-200 ${data.systems.includes(sys.value)
-                                            ? "border-brand-accent bg-brand-accent/5"
-                                            : "border-white/10 hover:border-white/30"
+                                        ? "border-brand-accent bg-brand-accent/5"
+                                        : "border-white/10 hover:border-white/30"
                                         }`}
                                 >
                                     <div className="flex items-center justify-between mb-2">
@@ -328,7 +328,7 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                     value={data.name}
                                     onChange={(e) => update("name", e.target.value)}
                                     placeholder="Greg Polk"
-                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus:border-brand-accent focus:outline-none transition-colors"
+                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus-visible:border-brand-accent focus-visible:outline-none transition-colors"
                                 />
                             </div>
 
@@ -341,7 +341,7 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                     value={data.email}
                                     onChange={(e) => update("email", e.target.value)}
                                     placeholder="greg@example.com"
-                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus:border-brand-accent focus:outline-none transition-colors"
+                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus-visible:border-brand-accent focus-visible:outline-none transition-colors"
                                 />
                             </div>
 
@@ -354,7 +354,7 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                     value={data.phone}
                                     onChange={(e) => update("phone", e.target.value)}
                                     placeholder="(555) 000-0000"
-                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus:border-brand-accent focus:outline-none transition-colors"
+                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus-visible:border-brand-accent focus-visible:outline-none transition-colors"
                                 />
                             </div>
 
@@ -369,8 +369,8 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                             type="button"
                                             onClick={() => update("preferred_contact", method)}
                                             className={`flex-1 border p-3 font-sans text-sm capitalize transition-all ${data.preferred_contact === method
-                                                    ? "border-brand-accent text-brand-white bg-brand-accent/5"
-                                                    : "border-white/10 text-brand-text-muted hover:border-white/30"
+                                                ? "border-brand-accent text-brand-white bg-brand-accent/5"
+                                                : "border-white/10 text-brand-text-muted hover:border-white/30"
                                                 }`}
                                         >
                                             {method}
@@ -388,7 +388,7 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                                     onChange={(e) => update("message", e.target.value)}
                                     rows={3}
                                     placeholder="Tell us about your vision..."
-                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus:border-brand-accent focus:outline-none transition-colors resize-none"
+                                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-base placeholder:text-white/20 focus-visible:border-brand-accent focus-visible:outline-none transition-colors resize-none"
                                 />
                             </div>
                         </div>
@@ -432,8 +432,8 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                             onClick={next}
                             disabled={!canProceed()}
                             className={`flex items-center gap-2 px-8 py-4 font-display text-sm uppercase tracking-wider transition-all duration-200 ${canProceed()
-                                    ? "bg-brand-accent text-brand-black hover:bg-white"
-                                    : "bg-white/5 text-white/20 cursor-not-allowed"
+                                ? "bg-brand-accent text-brand-black hover:bg-white"
+                                : "bg-white/5 text-white/20 cursor-not-allowed"
                                 }`}
                         >
                             Continue
@@ -445,8 +445,8 @@ export function AssessmentForm({ source = "contact" }: AssessmentFormProps) {
                             onClick={handleSubmit}
                             disabled={!canProceed() || submitting}
                             className={`flex items-center gap-2 px-8 py-4 font-display text-sm uppercase tracking-wider transition-all duration-200 ${canProceed() && !submitting
-                                    ? "bg-brand-accent text-brand-black hover:bg-white"
-                                    : "bg-white/5 text-white/20 cursor-not-allowed"
+                                ? "bg-brand-accent text-brand-black hover:bg-white"
+                                : "bg-white/5 text-white/20 cursor-not-allowed"
                                 }`}
                         >
                             {submitting ? (

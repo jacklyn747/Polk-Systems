@@ -3,7 +3,10 @@
 import { useEffect, useRef } from "react";
 import { initVibeEngine } from "@/animations/master";
 import Lenis from "lenis";
-import { ReactLenis } from "@studio-freight/react-lenis";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- @studio-freight/react-lenis ships React 18 types
+import { ReactLenis as ReactLenisBase } from "@studio-freight/react-lenis";
+
+const ReactLenis = ReactLenisBase as any;
 
 export default function SmoothScrolling({
     children,
@@ -36,6 +39,5 @@ export default function SmoothScrolling({
         // or just return children.
         <ReactLenis root lenisRef={lenisRef}>
             {children}
-        </ReactLenis>
-    );
+        </ReactLenis>);
 }

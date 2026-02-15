@@ -60,27 +60,33 @@ export function QuickContactForm({ source = "faq" }: QuickContactFormProps) {
     return (
         <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label htmlFor="quick-name" className="sr-only">Your name</label>
                 <input
+                    id="quick-name"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-sm placeholder:text-white/20 focus:border-brand-accent focus:outline-none transition-colors"
+                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-sm placeholder:text-white/20 focus-visible:border-brand-accent focus-visible:outline-none transition-colors"
                 />
+                <label htmlFor="quick-email" className="sr-only">Your email</label>
                 <input
+                    id="quick-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your email"
-                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-sm placeholder:text-white/20 focus:border-brand-accent focus:outline-none transition-colors"
+                    className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-sm placeholder:text-white/20 focus-visible:border-brand-accent focus-visible:outline-none transition-colors"
                 />
             </div>
+            <label htmlFor="quick-message" className="sr-only">Your message</label>
             <textarea
+                id="quick-message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={3}
                 placeholder="What can we help with?"
-                className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-sm placeholder:text-white/20 focus:border-brand-accent focus:outline-none transition-colors resize-none"
+                className="w-full bg-transparent border border-white/10 px-4 py-4 text-brand-white font-sans text-sm placeholder:text-white/20 focus-visible:border-brand-accent focus-visible:outline-none transition-colors resize-none"
             />
 
             {error && (
@@ -92,8 +98,8 @@ export function QuickContactForm({ source = "faq" }: QuickContactFormProps) {
                 onClick={handleSubmit}
                 disabled={!canSubmit || submitting}
                 className={`flex items-center gap-2 px-6 py-4 font-display text-xs uppercase tracking-wider transition-all duration-200 ${canSubmit && !submitting
-                        ? "bg-brand-accent text-brand-black hover:bg-white"
-                        : "bg-white/5 text-white/20 cursor-not-allowed"
+                    ? "bg-brand-accent text-brand-black hover:bg-white"
+                    : "bg-white/5 text-white/20 cursor-not-allowed"
                     }`}
             >
                 {submitting ? (

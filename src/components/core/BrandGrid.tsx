@@ -21,7 +21,7 @@ export const BrandGrid = () => {
 
             <Container>
                 <div className="flex flex-col items-center mb-12">
-                    <p className="text-white/40 text-xs font-bold tracking-[0.2em] uppercase mb-4">Trusted Integration</p>
+                    <p className="text-white/60 text-xs font-bold tracking-[0.2em] uppercase mb-4">Trusted Integration</p>
                 </div>
             </Container>
 

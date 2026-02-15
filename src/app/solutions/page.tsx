@@ -8,7 +8,7 @@ import { TechnicalHeading } from "@/components/core/TechnicalHeading";
 
 export default function Solutions() {
     return (
-        <main className="min-h-screen bg-brand-black text-white relative overflow-hidden pt-24">
+        <div className="min-h-screen bg-brand-black text-white relative overflow-hidden pt-24">
             {/* Architectural Grid Overlay */}
             <div className="absolute inset-0 polk-architectural-grid opacity-30 pointer-events-none z-10" />
 
@@ -194,6 +194,6 @@ export default function Solutions() {
                     </div>
                 </div>
             </section>
-        </main>
+        </div>
     );
 }

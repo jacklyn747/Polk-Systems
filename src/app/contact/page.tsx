@@ -53,7 +53,7 @@ export default function ContactPage() {
                             <div className="p-10 bg-brand-black group">
                                 <span className="text-brand-accent text-[8px] font-black uppercase tracking-widest mb-6 block">Direct_Relay_01</span>
                                 <h3 className="text-xl font-black uppercase mb-4 group-hover:text-brand-accent transition-colors">Email Channel</h3>
-                                <a href="mailto:hello@polksystems.com" className="text-sm font-black uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+                                <a href="mailto:hello@polksystems.com" className="text-sm font-black uppercase tracking-widest text-white/60 hover:text-white transition-colors">
                                     hello@polksystems.com
                                 </a>
                             </div>

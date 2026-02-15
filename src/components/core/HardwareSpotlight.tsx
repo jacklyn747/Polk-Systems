@@ -83,7 +83,7 @@ export const HardwareSpotlight = () => {
                         </div>
                     </div>
                     <div className="max-w-xs pb-4">
-                        <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose">
+                        <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
                             Private by nature. <br />
                             Built for local autonomy. <br />
                             No subscriptions needed.

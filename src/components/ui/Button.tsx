@@ -11,7 +11,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             <button
                 ref={ref}
                 className={cn(
-                    "inline-flex items-center justify-center rounded-none border-[1px] px-8 py-4 text-[10px] font-bold tracking-[0.2em] transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-brand-accent disabled:opacity-50 disabled:pointer-events-none uppercase font-sans",
+                    "inline-flex items-center justify-center rounded-none border-[1px] px-8 py-4 text-[10px] font-bold tracking-[0.2em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-accent disabled:opacity-50 disabled:pointer-events-none uppercase font-sans",
                     variant === "primary"
                         ? "bg-brand-black border-brand-black text-brand-white hover:bg-white hover:text-brand-black"
                         : "bg-transparent border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-white",

@@ -13,7 +13,7 @@ export default function SetupPage() {
             {/* Background Texture */}
             <div className="fixed inset-0 polk-architectural-grid opacity-10 pointer-events-none z-0" />
 
-            <main className="pt-48 pb-32 relative z-10">
+            <div className="pt-48 pb-32 relative z-10">
                 <Container>
                     <div className="mb-24">
                         <Breadcrumb />
@@ -28,7 +28,7 @@ export default function SetupPage() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-16 border-t border-white/10 pt-16">
                         <div className="md:col-span-4">
                             <span className="text-brand-accent text-[10px] font-black uppercase tracking-widest mb-4 block">Phase Two</span>
-                            <p className="text-lg text-white/40 leading-relaxed font-medium">
+                            <p className="text-lg text-white/60 leading-relaxed font-medium">
                                 Our engineers build your custom "Home Core" off-site. We configure, text, and burn-in every server rack for 48 hours before it ever touches your home.
                             </p>
                         </div>
@@ -53,7 +53,7 @@ export default function SetupPage() {
                     </div>
 
                     <div className="mt-32 flex justify-between items-center border-t border-white/10 pt-16">
-                        <Link href="/process/discover" className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+                        <Link href="/process/discover" className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-white/60 hover:text-white transition-colors">
                             <span className="group-hover:-translate-x-2 transition-transform">←</span> Discover
                         </Link>
                         <Link href="/process/activate" className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-widest hover:text-brand-accent transition-colors">
@@ -61,7 +61,7 @@ export default function SetupPage() {
                         </Link>
                     </div>
                 </Container>
-            </main>
+            </div>
 
             <Footer />
         </div>
