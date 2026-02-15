@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { Container } from "@/components/ui/Container";
+import Link from 'next/link';
 
 export const SovereigntyAudit = () => {
     const [step, setStep] = useState(0);
@@ -94,9 +95,9 @@ export const SovereigntyAudit = () => {
                             Your result was calculated right here. <br />
                             Nothing was sent to our servers.
                         </p>
-                        <button className="mt-20 bg-black text-white px-12 py-6 rounded-full text-xs font-black uppercase tracking-[0.4em] hover:bg-brand-accent transition-all duration-500 transform hover:scale-105 shadow-2xl">
+                        <Link href="/get-started" className="inline-block mt-20 bg-black text-white px-12 py-6 rounded-full text-xs font-black uppercase tracking-[0.4em] hover:bg-brand-accent transition-all duration-500 transform hover:scale-105 shadow-2xl">
                             Request your report ↘
-                        </button>
+                        </Link>
                     </div>
                 )}
             </Container>
