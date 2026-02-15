@@ -40,16 +40,16 @@ export const Header = () => {
 
                     <Link
                         href="/get-started"
-                        className="bg-brand-accent text-black px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all shadow-premium ml-4"
+                        className="bg-brand-accent text-black px-8 py-4 text-[9px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all shadow-premium ml-4 border-l border-white/10"
                     >
                         Home Assessment ↘
                     </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <button className="lg:hidden flex flex-col gap-1.5 p-2 bg-white/5 rounded-full px-4">
-                    <div className="w-6 h-0.5 bg-white"></div>
-                    <div className="w-6 h-0.5 bg-brand-accent"></div>
+                <button className="lg:hidden flex flex-col gap-1.5 p-4 border border-white/10 bg-white/5">
+                    <div className="w-6 h-[1px] bg-white"></div>
+                    <div className="w-6 h-[1px] bg-brand-accent"></div>
                 </button>
             </Container>
         </nav>

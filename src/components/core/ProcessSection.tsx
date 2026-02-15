@@ -69,20 +69,25 @@ export const ProcessSection = () => {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-white/10">
                     {steps.map((step) => (
-                        <Link href={step.href} key={step.id} className="process-step group p-10 bg-brand-dark-grey rounded-[40px] border border-white/5 hover:border-brand-accent transition-all duration-500 flex flex-col h-full shadow-premium cursor-pointer relative overflow-hidden">
-                            <span className="text-brand-accent text-xs font-black tracking-widest mb-12">{step.id}</span>
-                            <h3 className="text-3xl font-black uppercase tracking-tight mb-4 mt-auto group-hover:text-brand-accent transition-colors">{step.title}</h3>
-                            <p className="text-white/40 text-sm font-bold leading-relaxed uppercase group-hover:text-white transition-colors">{step.desc}</p>
+                        <Link href={step.href} key={step.id} className="process-step group p-12 lg:p-16 border-r border-white/10 last:border-r-0 border-b lg:border-b-0 hover:bg-white/5 transition-all duration-500 flex flex-col h-full relative overflow-hidden">
+                            <span className="text-brand-accent text-[10px] font-black tracking-[0.3em] uppercase mb-16 block">Phase_{step.id}</span>
+                            <h3 className="text-3xl font-black uppercase tracking-tight mb-6 mt-auto text-white/40 group-hover:text-white transition-colors">
+                                {step.title}
+                            </h3>
+                            <p className="text-white/30 text-[10px] font-black leading-loose uppercase tracking-widest group-hover:text-white/60 transition-colors">
+                                {step.desc}
+                            </p>
 
-                            <div className="mt-8 pt-8 border-t border-white/5 group-hover:border-brand-accent/20 transition-colors">
-                                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-sm group-hover:bg-brand-accent group-hover:text-black transition-all">
-                                    →
-                                </div>
+                            <div className="mt-12 flex items-center gap-4 group-hover:gap-8 transition-all duration-500">
+                                <div className="h-[1px] flex-grow bg-white/10 group-hover:bg-brand-accent/50 transition-colors" />
+                                <span className="text-[10px] font-black tracking-widest uppercase text-white/20 group-hover:text-brand-accent">
+                                    Expand ↗
+                                </span>
                             </div>
 
-                            {/* Hover Gradient */}
+                            {/* Hover Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                         </Link>
                     ))}

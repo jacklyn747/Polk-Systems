@@ -5,9 +5,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Container } from "@/components/ui/Container";
-import { SpotlightGrid } from "@/components/ui/SpotlightGrid";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const SystemStatus = ({ progress }: { progress: number }) => {
     const [status, setStatus] = useState("SYSTEM: ONLINE");
@@ -27,8 +24,8 @@ const SystemStatus = ({ progress }: { progress: number }) => {
     }, [progress]);
 
     return (
-        <div className="flex items-center gap-3 font-mono text-[10px] tracking-widest uppercase border border-white/10 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full">
-            <div className={`w-2 h-2 rounded-full ${progress > 0.6 ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]' : 'bg-brand-accent animate-pulse'}`}></div>
+        <div className="flex items-center gap-4 font-mono text-[10px] tracking-[0.2em] uppercase py-2">
+            <div className={`w-1.5 h-1.5 rounded-full ${progress > 0.6 ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]' : 'bg-brand-accent animate-pulse'}`}></div>
             <span className={`${color} transition-colors duration-300`}>{status}</span>
         </div>
     );
@@ -36,9 +33,7 @@ const SystemStatus = ({ progress }: { progress: number }) => {
 
 export function Hero() {
     const sectionRef = useRef<HTMLElement>(null);
-    const mainCardRef = useRef<HTMLDivElement>(null);
-    const sideCardRef = useRef<HTMLAnchorElement>(null);
-    const statsRef = useRef<HTMLDivElement>(null);
+    const mainImageRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLHeadingElement>(null);
     const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -56,20 +51,9 @@ export function Hero() {
                 onUpdate: (self) => setScrollProgress(self.progress),
             });
 
-            // Parallax Effects
-            gsap.to(mainCardRef.current, {
+            // Parallax on Main Image
+            gsap.to(mainImageRef.current, {
                 yPercent: 10,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
-                },
-            });
-
-            gsap.to(sideCardRef.current, {
-                yPercent: -15, // Move differently to create depth
                 ease: "none",
                 scrollTrigger: {
                     trigger: sectionRef.current,
@@ -81,8 +65,8 @@ export function Hero() {
 
             // Text Parallax & Fade
             gsap.to(textRef.current, {
-                yPercent: 30,
-                opacity: 0,
+                yPercent: 20,
+                opacity: 0.2,
                 ease: "none",
                 scrollTrigger: {
                     trigger: sectionRef.current,
@@ -91,134 +75,117 @@ export function Hero() {
                     scrub: true,
                 },
             });
-
-            // Stats Reveal
-            gsap.from(statsRef.current ? statsRef.current.children : [], {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: statsRef.current,
-                    start: "top 90%",
-                },
-            });
         }, sectionRef);
 
         return () => ctx.revert();
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative min-h-screen bg-brand-black text-brand-white pt-24 pb-12 overflow-hidden">
-            {/* Immersive Canvas Grid */}
-            <SpotlightGrid />
+        <section ref={sectionRef} className="relative min-h-screen bg-brand-black text-brand-white border-b border-white/10 pt-20">
+            {/* Main Hero Container: 4-Column Grid Architecture */}
+            <div className="grid grid-cols-1 lg:grid-cols-4 min-h-[calc(100vh-80px)]">
 
-            <Container className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 h-full mt-4">
-                {/* Main Hero Card - Left Side */}
-                <div ref={mainCardRef} className="lg:col-span-8 relative aspect-[4/3] lg:aspect-auto lg:h-[85vh] bg-brand-dark-grey rounded-[40px] overflow-hidden group border border-white/5 shadow-premium will-change-transform">
-                    <Image
-                        src="/hero-ultra-hd.png"
-                        alt="Polk Home"
-                        fill
-                        className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-[4000ms] ease-out"
-                        priority
-                    />
+                {/* Left Header Cell (3 Columns) */}
+                <div className="lg:col-span-3 relative border-r border-white/10 flex flex-col justify-between overflow-hidden">
 
-                    {/* Subtle Overlay */}
-                    <div className="absolute inset-0 polk-grid-overlay opacity-20 pointer-events-none z-20"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
-
-                    {/* System Status Ticker */}
-                    <div className="absolute top-8 left-8 z-30 opacity-80 hover:opacity-100 transition-opacity">
+                    {/* Top Meta Bar */}
+                    <div className="border-b border-white/10 p-8 flex justify-between items-center bg-black/20 backdrop-blur-sm z-30">
                         <SystemStatus progress={scrollProgress} />
+                        <div className="hidden lg:flex items-center gap-8 text-[10px] font-black tracking-widest text-white/40 uppercase">
+                            <span>COORDS: 40.7128° N, 74.0060° W</span>
+                            <span>VERSION: 2.0.4-STABLE</span>
+                        </div>
                     </div>
 
-                    <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16 z-30">
+                    {/* Background Image (Parallax) */}
+                    <div ref={mainImageRef} className="absolute inset-0 z-10 scale-110">
+                        <Image
+                            src="/hero-ultra-hd.png"
+                            alt="Polk Home"
+                            fill
+                            className="object-cover opacity-60"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80" />
+                        <div className="absolute inset-0 polk-grid-overlay opacity-20" />
+                    </div>
 
-                        <h1 ref={textRef} className="text-[10vw] md:text-[8vw] leading-[0.95] font-black tracking-tighter text-white select-none uppercase mb-8 will-change-transform">
-                            Your home.<br />Truly yours.
+                    {/* Hero Content */}
+                    <div className="relative z-20 p-8 md:p-20 mt-auto">
+                        <h1 ref={textRef} className="text-[12vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-white uppercase mb-12 select-none">
+                            Your home.<br />
+                            <span className="text-white/20">Truly yours.</span>
                         </h1>
-                        <div className="flex justify-between items-end w-full mt-4 border-t border-white/10 pt-10">
-                            <div>
-                                <h3 className="text-2xl font-black uppercase tracking-tight">The Sovereign Collection</h3>
-                                <p className="text-brand-white/50 text-sm font-medium mt-2">Privacy built into every room.</p>
+
+                        <div className="flex flex-col md:flex-row gap-12 items-baseline max-w-4xl">
+                            <div className="flex-1">
+                                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">The Sovereign Collection</h3>
+                                <p className="text-white/40 text-xs font-bold leading-loose uppercase tracking-widest max-w-md">
+                                    Privacy is no longer a feature. <br />
+                                    It is the foundation of the modern sanctuary. <br />
+                                    Built for local autonomy.
+                                </p>
                             </div>
-                            <MagneticButton>
-                                <Link href="/manifesto" className="inline-block text-xs font-black uppercase tracking-widest bg-white text-black px-10 py-5 rounded-full hover:bg-brand-accent hover:text-white transition-all duration-500">
-                                    Read our story
-                                </Link>
-                            </MagneticButton>
+                            <Link href="/manifesto" className="group flex items-center gap-6 text-xs font-black uppercase tracking-[0.4em] text-brand-accent hover:text-white transition-colors duration-500 pb-2 border-b border-brand-accent/30 hover:border-white">
+                                Read the Manifesto
+                                <span className="text-xl group-hover:translate-x-2 transition-transform">→</span>
+                            </Link>
                         </div>
+                    </div>
+
+                    {/* Visual Coordinate Markers */}
+                    <div className="absolute bottom-8 left-8 text-[8px] font-mono opacity-20 uppercase tracking-widest vertical-rl hidden lg:block">
+                        LAT_40.71_LNG_-74.00_INDEX_001
                     </div>
                 </div>
 
-                {/* Right Side Grid - The Local Brain Feature */}
-                <div className="lg:col-span-4 flex flex-col gap-6 h-full pointer-events-none lg:pointer-events-auto">
-                    <Link ref={sideCardRef} href="/technology" className="flex-1 bg-brand-dark-grey rounded-[40px] relative overflow-hidden group min-h-[40vh] border border-white/5 shadow-premium block hover:border-brand-accent/30 transition-all duration-700 will-change-transform">
-                        <div className="absolute inset-0 polk-grid-overlay opacity-10 pointer-events-none z-20"></div>
-                        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-12 text-center text-balance">
-                            <h2 className="text-5xl lg:text-6xl leading-[1] font-black tracking-tighter text-white uppercase group-hover:scale-105 transition-transform duration-700">
-                                The Local <br />
-                                <span className="text-brand-accent italic font-serif normal-case tracking-normal">Brain.</span>
-                            </h2>
-                            <div className="mt-8 text-xs font-black uppercase tracking-widest text-brand-white/40 group-hover:text-white transition-colors">
-                                Explore The Core ↗
-                            </div>
-                        </div>
+                {/* Right Feature Column (1 Column) */}
+                <div className="lg:col-span-1 flex flex-col">
 
-                        <div className="absolute bottom-12 left-12 z-30">
-                            <h3 className="text-xl font-black uppercase tracking-tight">Zero Cloud</h3>
-                            <p className="text-white/40 text-xs font-medium mt-1">No WiFi needed for core privacy.</p>
-                        </div>
-
-                        {/* Hover Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    </Link>
-
-                    <Link href="/get-started" className="bg-brand-accent rounded-[40px] p-12 flex flex-col justify-between hover:bg-white hover:text-black transition-all duration-700 group cursor-pointer h-64 shadow-2xl relative overflow-hidden">
-                        <div className="flex justify-between items-start relative z-10">
-                            <span className="text-5xl font-light scale-y-125 group-hover:translate-x-3 transition-transform duration-700">↗</span>
-                        </div>
-                        <div className="relative z-10">
-                            <span className="text-xs font-black uppercase tracking-widest opacity-60 block mb-2">Next Step</span>
-                            <h2 className="text-4xl font-black uppercase tracking-tighter leading-none">Get Started</h2>
-                        </div>
-                    </Link>
-                </div>
-            </Container>
-
-            {/* Simple Stats Section */}
-            <Container className="mt-24 lg:mt-40 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
-                    <div>
-                        <h2 className="text-4xl md:text-5xl font-black leading-[1.1] tracking-tighter uppercase text-white/80">
-                            Smart homes should be <br />
-                            <span className="text-brand-accent font-serif italic font-normal normal-case tracking-normal text-6xl">simple.</span> <br />
-                            <span className="text-white/40">And completely local.</span>
+                    {/* Feature Cell 1: The Brain */}
+                    <Link href="/technology" className="flex-1 border-b border-white/10 p-12 group hover:bg-white/5 transition-colors relative overflow-hidden">
+                        <span className="text-brand-accent text-[10px] font-black tracking-widest uppercase mb-12 block">Tech_01</span>
+                        <h2 className="text-4xl leading-[1] font-black tracking-tighter text-white uppercase mb-6 group-hover:scale-105 transition-transform duration-700">
+                            The Local <br />
+                            <span className="text-white/20">Brain.</span>
                         </h2>
-                    </div>
-                    <div ref={statsRef} className="grid grid-cols-3 gap-12 border-t border-white/10 pt-12">
-                        <div>
-                            <div className="text-4xl font-black text-white/50 tracking-tighter">0</div>
-                            <div className="text-[10px] font-black mt-3 tracking-widest uppercase mb-1">Subscriptions</div>
-                            <p className="text-[10px] text-white/40 leading-relaxed font-bold uppercase tracking-wide">One time buy.</p>
+                        <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose max-w-[200px]">
+                            No WiFi needed for core privacy. Your data stays on-prem.
+                        </p>
+                        <div className="absolute bottom-12 right-12 text-2xl font-light opacity-0 group-hover:opacity-100 transition-opacity">↗</div>
+                    </Link>
+
+                    {/* Feature Cell 2: Get Started */}
+                    <Link href="/get-started" className="h-64 md:h-80 bg-brand-accent p-12 group hover:bg-white transition-colors flex flex-col justify-between relative overflow-hidden">
+                        <div className="flex justify-between items-start">
+                            <span className="text-black text-[10px] font-black tracking-widest uppercase opacity-60">Action_02</span>
+                            <span className="text-4xl text-black font-light group-hover:translate-x-2 transition-transform">→</span>
                         </div>
                         <div>
-                            <div className="text-4xl font-black text-white/50 tracking-tighter">100%</div>
-                            <div className="text-[10px] font-black mt-3 tracking-widest uppercase mb-1">Local Control</div>
-                            <p className="text-[10px] text-white/40 leading-relaxed font-bold uppercase tracking-wide">Works offline.</p>
+                            <span className="text-black text-[10px] font-black uppercase tracking-widest opacity-40 block mb-2">Next Step</span>
+                            <h2 className="text-4xl text-black font-black uppercase tracking-tighter leading-none">Get Started</h2>
                         </div>
-                        <div>
-                            <div className="text-4xl font-black text-white/50 tracking-tighter">AES</div>
-                            <div className="text-[10px] font-black mt-3 tracking-widest uppercase mb-1">Encrypted</div>
-                            <p className="text-[10px] text-white/40 leading-relaxed font-bold uppercase tracking-wide">Total security.</p>
+                    </Link>
+
+                    {/* Stats Ticker (Hidden on mobile, visible on desktop at bottom of right col) */}
+                    <div className="p-12 border-b border-white/10 hidden lg:block">
+                        <div className="space-y-8">
+                            <div>
+                                <div className="text-2xl font-black text-white/50 tracking-tighter leading-none mb-2">0 SEC</div>
+                                <div className="text-[10px] font-black tracking-widest uppercase text-white/30">Network Latency</div>
+                            </div>
+                            <div>
+                                <div className="text-2xl font-black text-white/50 tracking-tighter leading-none mb-2">100%</div>
+                                <div className="text-[10px] font-black tracking-widest uppercase text-white/30">Data Retention</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </Container>
+            </div>
 
-            {/* Ambient Background Glow */}
-            <div className="absolute top-1/4 left-0 w-full h-[60vh] bg-gradient-to-b from-transparent via-brand-accent/5 to-transparent pointer-events-none opacity-20 blur-[120px]"></div>
+            {/* Ambient Background Glow (Subtle) */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-accent/5 blur-[120px] pointer-events-none" />
         </section>
     );
 }
+
