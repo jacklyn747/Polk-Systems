@@ -129,6 +129,15 @@ export default function HowItWorksPage() {
                             </p>
                         </div>
                     </div>
+
+                    <div className="mt-12 text-right">
+                        <Link
+                            href="/technology"
+                            className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-brand-accent transition-colors group"
+                        >
+                            Deep Dive Into Our Technology <span className="group-hover:translate-x-2 transition-transform duration-500">↘</span>
+                        </Link>
+                    </div>
                 </Container>
             </section>
 

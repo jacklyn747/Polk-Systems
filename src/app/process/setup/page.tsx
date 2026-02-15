@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { Footer } from "@/components/layout/Footer";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -15,9 +16,7 @@ export default function SetupPage() {
             <main className="pt-48 pb-32 relative z-10">
                 <Container>
                     <div className="mb-24">
-                        <Link href="/process" className="text-brand-accent text-xs font-black tracking-[0.4em] uppercase mb-8 inline-block hover:text-white transition-colors">
-                            ← Back to Methodology
-                        </Link>
+                        <Breadcrumb />
                         <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-8">
                             Setup.
                         </h1>
