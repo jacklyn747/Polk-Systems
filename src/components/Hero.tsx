@@ -104,6 +104,7 @@ export function Hero() {
                             src="/hero-ultra-hd.png"
                             alt="Polk Home"
                             fill
+                            sizes="100vw"
                             className="object-cover opacity-60"
                             priority
                         />

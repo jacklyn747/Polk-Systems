@@ -39,20 +39,24 @@ export const ProcessSection = () => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".process-step",
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 70%",
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".process-step",
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 70%",
+                    }
                 }
-            }
-        );
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
     }, []);
 
     return (

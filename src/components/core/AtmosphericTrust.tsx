@@ -155,6 +155,7 @@ export const AtmosphericTrust = () => {
                                 src="/hero-ultra-hd.png"
                                 alt="The Sanctuary"
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 33vw"
                                 className="object-cover group-hover:contrast-110 group-hover:brightness-110 group-hover:saturate-150 transition-all duration-[2000ms] ease-out"
                             />
                         </div>
