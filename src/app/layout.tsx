@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 import { Header } from "@/components/layout/Header";
+import { Preloader } from "@/components/core/Preloader";
 
 export default function RootLayout({
   children,
@@ -32,6 +33,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+        <Preloader />
         <SmoothScrolling>
           <a
             href="#main-content"

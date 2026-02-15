@@ -46,7 +46,7 @@ export function Footer() {
                             <Link
                                 key={social.name}
                                 href={social.href}
-                                className="border border-white/5 aspect-square flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-700 text-[10px] font-black uppercase tracking-[0.3em] rounded-3xl group shadow-premium"
+                                className="border border-white/5 aspect-square flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-700 text-[10px] font-black uppercase tracking-[0.3em] group shadow-premium"
                             >
                                 <span className="group-hover:scale-110 transition-transform">{social.name}</span>
                             </Link>
@@ -58,7 +58,7 @@ export function Footer() {
                     <div>© Polk Systems {new Date().getFullYear()}</div>
                     <div className="md:col-span-2 flex justify-center gap-12">
                         <div className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-brand-accent rounded-full" />
+                            <div className="w-1.5 h-1.5 bg-brand-accent" />
                             <span>System Sovereign</span>
                         </div>
                     </div>

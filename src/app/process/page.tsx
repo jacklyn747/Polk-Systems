@@ -2,7 +2,6 @@
 
 import { Container } from "@/components/ui/Container";
 import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -42,7 +41,6 @@ const PROCESS_STEPS = [
 export default function ProcessPage() {
     return (
         <div className="bg-brand-black min-h-screen text-brand-white selection:bg-brand-accent selection:text-black">
-            <Header />
 
             {/* Background Texture */}
             <div className="fixed inset-0 polk-architectural-grid opacity-10 pointer-events-none z-0" />
@@ -63,16 +61,16 @@ export default function ProcessPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.1 }}
-                            className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-12"
+                            className="text-6xl md:text-[8rem] font-black uppercase tracking-tighter leading-[0.8] mb-12"
                         >
                             Precision <br />
-                            <span className="text-brand-white/50">Engineering.</span>
+                            <span className="text-brand-white/20">Engineering.</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-xl md:text-2xl text-brand-white/80 font-medium leading-relaxed max-w-2xl border-l-2 border-brand-accent pl-8"
+                            className="text-xl md:text-2xl text-brand-white/80 font-medium leading-relaxed max-w-2xl border-l border-brand-accent/30 pl-8"
                         >
                             A Polk System is not installed; it is commissioned. We follow a military-grade protocol to ensure that your system performs flawlessly from Day One to Year Ten.
                         </motion.p>
@@ -81,9 +79,9 @@ export default function ProcessPage() {
             </section>
 
             {/* The Process Timeline */}
-            <section className="py-24 relative z-10 border-t border-white/5">
+            <section className="py-24 relative z-10 border-t border-white/10">
                 <Container>
-                    <div className="space-y-0">
+                    <div className="space-y-0 border-x border-white/10">
                         {PROCESS_STEPS.map((step, idx) => (
                             <motion.div
                                 key={step.number}
@@ -91,33 +89,31 @@ export default function ProcessPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                                className="group relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 border-b border-white/10 py-16 md:py-24 hover:bg-white/[0.02] transition-colors"
+                                className="group relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 border-b border-white/10 py-16 md:py-24 hover:bg-white/[0.02] transition-colors px-12"
                             >
-                                {/* Active Indicator Line */}
-                                <div className="absolute left-0 bottom-0 top-0 w-1 bg-brand-accent scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500" />
-
                                 {/* Number */}
                                 <div className="md:col-span-2">
-                                    <span className="text-6xl md:text-7xl font-black text-white/5 group-hover:text-brand-accent/20 transition-colors font-mono">
+                                    <span className="text-6xl md:text-8xl font-black text-white/5 group-hover:text-brand-accent/20 transition-colors font-mono">
                                         {step.number}
                                     </span>
                                 </div>
 
                                 {/* Content */}
                                 <div className="md:col-span-6">
-                                    <h3 className="text-3xl font-black uppercase tracking-tight mb-6 flex items-center gap-4">
+                                    <h3 className="text-3xl font-black uppercase tracking-tight mb-8 flex items-center gap-4">
                                         {step.title}
                                     </h3>
-                                    <p className="text-brand-text-muted text-lg leading-relaxed">
+                                    <p className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-loose">
                                         {step.description}
                                     </p>
                                 </div>
 
                                 {/* Detail/Output */}
                                 <div className="md:col-span-4 flex items-end md:justify-end">
-                                    <div className="bg-white/5 border border-white/10 px-6 py-4 rounded-xl">
-                                        <span className="block text-[10px] font-black uppercase tracking-widest text-brand-accent mb-1">Deliverable</span>
-                                        <span className="block text-sm font-medium text-white">{step.detail}</span>
+                                    <div className="bg-white/5 border border-white/10 px-8 py-6 relative overflow-hidden group-hover:border-brand-accent/50 transition-colors">
+                                        <div className="absolute top-0 left-0 w-[2px] h-full bg-brand-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <span className="block text-[8px] font-black uppercase tracking-[0.3em] text-brand-accent mb-4">Deliverable</span>
+                                        <span className="block text-sm font-black uppercase tracking-tight text-white">{step.detail}</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -127,32 +123,32 @@ export default function ProcessPage() {
             </section>
 
             {/* The Guarantee */}
-            <section className="py-32 bg-brand-dark-grey relative z-10">
+            <section className="py-32 bg-black/40 relative z-10 border-t border-white/10">
                 <Container>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                        <div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
+                        <div className="p-16 bg-brand-black">
                             <motion.span
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
-                                className="text-brand-accent text-xs font-black tracking-[0.4em] uppercase mb-6 block"
+                                className="text-brand-accent text-[10px] font-black tracking-[0.4em] uppercase mb-8 block"
                             >
                                 The Promise
                             </motion.span>
-                            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8">
+                            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none">
                                 Zero Stress.<br />Guaranteed.
                             </h2>
-                            <p className="text-brand-text-muted text-lg leading-relaxed mb-8">
+                            <p className="text-white/40 text-lg font-medium leading-relaxed">
                                 We are so confident in our engineering process that we offer the industry's most comprehensive support package. If a component fails within the first year, we replace it. If the software glitches, we fix it remote-instantly.
                             </p>
                         </div>
-                        <div className="relative h-64 md:h-full min-h-[300px] border border-white/10 rounded-[40px] flex items-center justify-center bg-brand-black overflow-hidden">
+                        <div className="relative p-16 flex items-center justify-center bg-brand-black overflow-hidden border-l border-white/10">
                             {/* Abstract Visualization of 'Certified' */}
-                            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
-                            <div className="w-48 h-48 rounded-full border-2 border-brand-accent flex items-center justify-center relative">
-                                <div className="absolute inset-0 border border-brand-accent rounded-full animate-ping opacity-20" />
-                                <div className="text-center">
-                                    <div className="text-5xl font-black text-white mb-1">100%</div>
-                                    <div className="text-[10px] uppercase tracking-widest text-brand-accent">Uptime Goal</div>
+                            <div className="absolute inset-0 polk-architectural-grid opacity-10" />
+                            <div className="w-64 h-64 border border-brand-accent/30 flex items-center justify-center relative rotate-45 group">
+                                <div className="absolute inset-4 border border-brand-accent/20 animate-pulse" />
+                                <div className="text-center -rotate-45">
+                                    <div className="text-7xl font-black text-white mb-2 leading-none">100%</div>
+                                    <div className="text-[10px] font-black uppercase tracking-widest text-brand-accent">Uptime Goal</div>
                                 </div>
                             </div>
                         </div>
@@ -161,16 +157,16 @@ export default function ProcessPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-32 relative z-10">
+            <section className="py-32 relative z-10 border-t border-white/10">
                 <Container className="text-center">
-                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white mb-10">
-                        We are ready to build.
+                    <h2 className="text-6xl md:text-[8vw] font-black uppercase tracking-tighter text-white mb-16 leading-[0.8]">
+                        We are ready <br />to build.
                     </h2>
                     <Link
                         href="/get-started"
-                        className="inline-block bg-brand-accent text-brand-black px-10 py-5 rounded-full text-xs font-black uppercase tracking-[0.2em] hover:scale-105 hover:bg-white transition-all duration-300 shadow-[0_0_40px_rgba(255,145,77,0.3)]"
+                        className="inline-block bg-brand-accent text-brand-black px-16 py-6 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-white transition-all duration-500 shadow-premium"
                     >
-                        Initiate Assessment
+                        Initiate Assessment ↘
                     </Link>
                 </Container>
             </section>
@@ -179,3 +175,4 @@ export default function ProcessPage() {
         </div>
     );
 }
+

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TechnicalHeading } from "./core/TechnicalHeading";
 
 const SystemStatus = ({ progress }: { progress: number }) => {
     const [status, setStatus] = useState("SYSTEM: ONLINE");
@@ -25,7 +26,7 @@ const SystemStatus = ({ progress }: { progress: number }) => {
 
     return (
         <div className="flex items-center gap-4 font-mono text-[10px] tracking-[0.2em] uppercase py-2">
-            <div className={`w-1.5 h-1.5 rounded-full ${progress > 0.6 ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]' : 'bg-brand-accent animate-pulse'}`}></div>
+            <div className={`w-1.5 h-1.5 rounded-none ${progress > 0.6 ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]' : 'bg-brand-accent animate-pulse'}`}></div>
             <span className={`${color} transition-colors duration-300`}>{status}</span>
         </div>
     );
@@ -112,10 +113,18 @@ export function Hero() {
 
                     {/* Hero Content */}
                     <div className="relative z-20 p-8 md:p-20 mt-auto">
-                        <h1 ref={textRef} className="text-[12vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-white uppercase mb-12 select-none">
-                            Your home.<br />
-                            <span className="text-white/20">Truly yours.</span>
-                        </h1>
+                        <div ref={textRef} className="mb-12">
+                            <TechnicalHeading
+                                text="Your home."
+                                className="text-[12vw] md:text-[10vw]"
+                                delay={0.2}
+                            />
+                            <TechnicalHeading
+                                text="Truly yours."
+                                className="text-[12vw] md:text-[10vw] text-white/20"
+                                delay={0.6}
+                            />
+                        </div>
 
                         <div className="flex flex-col md:flex-row gap-12 items-baseline max-w-4xl">
                             <div className="flex-1">
@@ -126,8 +135,8 @@ export function Hero() {
                                     Built for local autonomy.
                                 </p>
                             </div>
-                            <Link href="/manifesto" className="group flex items-center gap-6 text-xs font-black uppercase tracking-[0.4em] text-brand-accent hover:text-white transition-colors duration-500 pb-2 border-b border-brand-accent/30 hover:border-white">
-                                Read the Manifesto
+                            <Link href="/story" className="group flex items-center gap-6 text-xs font-black uppercase tracking-[0.4em] text-brand-accent hover:text-white transition-colors duration-500 pb-2 border-b border-brand-accent/30 hover:border-white">
+                                Read our story
                                 <span className="text-xl group-hover:translate-x-2 transition-transform">→</span>
                             </Link>
                         </div>

@@ -7,9 +7,13 @@ import { motion } from "framer-motion";
 
 export default function ContactPage() {
     return (
-        <div className="bg-brand-black min-h-screen">
+        <div className="bg-brand-black min-h-screen text-brand-white selection:bg-brand-accent selection:text-black">
+
+            {/* Background Texture */}
+            <div className="fixed inset-0 polk-architectural-grid opacity-10 pointer-events-none z-0" />
+
             {/* Hero Section */}
-            <section className="relative pt-32 pb-8 md:pt-48 md:pb-12">
+            <section className="relative pt-48 pb-20 z-10">
                 <Container>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -17,53 +21,57 @@ export default function ContactPage() {
                         transition={{ duration: 0.8 }}
                         className="max-w-4xl"
                     >
-                        <h1 className="font-display font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tighter text-brand-white mb-6">
-                            LET&apos;S DESIGN<br />
-                            YOUR <span className="text-brand-text-muted">SYSTEM.</span>
+                        <span className="text-brand-accent text-[10px] font-black tracking-[0.4em] uppercase mb-8 block">Project Inquiry</span>
+                        <h1 className="text-6xl md:text-[8vw] font-black uppercase tracking-tighter leading-[0.8] mb-12">
+                            Connect with <br />
+                            <span className="text-brand-white/20">Engineering.</span>
                         </h1>
-                        <p className="font-sans text-xl text-brand-text-muted max-w-2xl leading-relaxed">
-                            Complete this 2-minute assessment and a Polk engineer will design a personalized system recommendation for your property.
+                        <p className="text-xl md:text-2xl text-brand-white/60 font-medium leading-relaxed max-w-2xl border-l border-brand-accent/30 pl-8">
+                            We don't have a sales team. When you reach out, you speak directly with the engineers who design and build our systems.
                         </p>
                     </motion.div>
                 </Container>
             </section>
 
             {/* Assessment Form */}
-            <section className="pb-24 md:pb-32">
+            <section className="pb-32 relative z-10">
                 <Container>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="max-w-4xl"
-                    >
-                        <AssessmentForm source="contact" />
-                    </motion.div>
-                </Container>
-            </section>
-
-            {/* Direct Contact Fallback */}
-            <section className="border-t border-white/5 py-16">
-                <Container>
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div>
-                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-text-muted font-sans mb-2">
-                                Prefer to reach out directly?
-                            </p>
-                            <a
-                                href="mailto:hello@polksystems.com"
-                                className="text-2xl font-display text-brand-white hover:text-brand-accent transition-colors"
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                        <div className="lg:col-span-7">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="bg-brand-black border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden"
                             >
-                                hello@polksystems.com
-                            </a>
+                                <div className="absolute top-0 left-0 w-full h-[1px] bg-brand-accent opacity-50" />
+                                <AssessmentForm source="contact" />
+                            </motion.div>
                         </div>
-                        <div className="text-right">
-                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-text-muted font-sans mb-2">
-                                Response Time
-                            </p>
-                            <p className="font-display text-xl text-brand-white">
-                                Within 24 Hours
-                            </p>
+
+                        <div className="lg:col-span-5 space-y-px bg-white/10 border border-white/10">
+                            <div className="p-10 bg-brand-black group">
+                                <span className="text-brand-accent text-[8px] font-black uppercase tracking-widest mb-6 block">Direct_Relay_01</span>
+                                <h3 className="text-xl font-black uppercase mb-4 group-hover:text-brand-accent transition-colors">Email Channel</h3>
+                                <a href="mailto:hello@polksystems.com" className="text-sm font-black uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+                                    hello@polksystems.com
+                                </a>
+                            </div>
+                            <div className="p-10 bg-brand-black group">
+                                <span className="text-brand-accent text-[8px] font-black uppercase tracking-widest mb-6 block">Direct_Relay_02</span>
+                                <h3 className="text-xl font-black uppercase mb-4 group-hover:text-brand-accent transition-colors">Response Protocol</h3>
+                                <p className="text-[10px] font-black uppercase tracking-widest leading-loose text-white/30">
+                                    Our team reviews every inquiry personally. Expect a technical response within 24 hours.
+                                </p>
+                            </div>
+                            <div className="p-10 bg-brand-black group">
+                                <span className="text-brand-accent text-[8px] font-black uppercase tracking-widest mb-6 block">Direct_Relay_03</span>
+                                <h3 className="text-xl font-black uppercase mb-4 group-hover:text-brand-accent transition-colors">Office Hours</h3>
+                                <p className="text-[10px] font-black uppercase tracking-widest leading-loose text-white/30">
+                                    Monday — Friday <br />
+                                    09:00 — 18:00 EST
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </Container>

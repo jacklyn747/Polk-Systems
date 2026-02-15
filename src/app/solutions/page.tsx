@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Shield, Brain, Cpu, ArrowRight } from "lucide-react";
+import { TechnicalHeading } from "@/components/core/TechnicalHeading";
 
 export default function Solutions() {
     return (
@@ -29,13 +30,18 @@ export default function Solutions() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1 }}
                         >
-                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-accent mb-4 block font-sans">
-                                Professional Home Control
-                            </span>
-                            <h1 className="text-5xl md:text-6xl lg:text-8xl font-display font-light tracking-tight leading-[0.85] uppercase mb-8">
-                                Total Home <br />
-                                <span className="text-brand-text-muted">Command.</span>
-                            </h1>
+                            <div className="mb-8">
+                                <TechnicalHeading
+                                    text="Total Home"
+                                    className="text-5xl md:text-6xl lg:text-8xl"
+                                    delay={0.1}
+                                />
+                                <TechnicalHeading
+                                    text="Command."
+                                    className="text-5xl md:text-6xl lg:text-8xl text-brand-text-muted"
+                                    delay={0.4}
+                                />
+                            </div>
                             <p className="text-sm text-brand-text-muted max-w-xl font-light leading-relaxed font-sans uppercase tracking-widest">
                                 Technology should be simple. We build systems that take care of the small things,
                                 so you can focus on what matters. Your home, your rules.

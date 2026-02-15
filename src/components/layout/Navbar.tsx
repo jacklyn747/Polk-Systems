@@ -142,17 +142,12 @@ export function Navbar() {
                                         <motion.div key={link.name} variants={linkVariants}>
                                             <Link
                                                 href={link.href}
-                                                className={`group relative text-5xl md:text-7xl font-display font-medium tracking-tighter transition-all duration-500 hover:pl-6 ${pathname === link.href ? "text-brand-white" : "text-brand-white/40 hover:text-brand-white"
+                                                className={`polk-hover-line group relative text-5xl md:text-7xl font-display font-medium tracking-tighter transition-all duration-500 block ${pathname === link.href ? "text-brand-white" : "text-brand-white/40 hover:text-brand-white"
                                                     }`}
                                             >
-                                                {link.name}
-                                                {pathname === link.href && (
-                                                    <motion.span
-                                                        layoutId="activeLink"
-                                                        className="absolute -left-6 top-1/2 -translate-y-1/2 w-3 h-[2px] bg-brand-accent"
-                                                    />
-                                                )}
-                                                <span className="absolute -left-0 top-1/2 -translate-y-1/2 w-0 h-[2px] bg-brand-accent transition-all duration-500 group-hover:w-4" />
+                                                <div className="polk-hover-line-content">
+                                                    {link.name}
+                                                </div>
                                             </Link>
                                         </motion.div>
                                     ))}

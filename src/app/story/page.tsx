@@ -2,18 +2,18 @@
 
 import { Container } from "@/components/ui/Container";
 import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+
+import { TechnicalHeading } from "@/components/core/TechnicalHeading";
 
 export default function StoryPage() {
     const [letterOpen, setLetterOpen] = useState(true);
 
     return (
         <div className="bg-brand-black min-h-screen text-brand-white selection:bg-brand-accent selection:text-black">
-            <Header />
 
             {/* Architectural Grid Background */}
             <div className="fixed inset-0 polk-architectural-grid opacity-10 pointer-events-none z-0" />
@@ -32,20 +32,34 @@ export default function StoryPage() {
                             >
                                 The Origin
                             </motion.span>
-                            <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.1 }}
-                                className="text-6xl md:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] mb-10"
-                            >
-                                It started<br />
-                                with a <span className="text-brand-accent font-serif italic font-normal normal-case tracking-normal">mother.</span>
-                            </motion.h1>
+                            <div className="mb-10">
+                                <TechnicalHeading
+                                    text="It started"
+                                    className="text-6xl md:text-7xl lg:text-[5.5rem]"
+                                    delay={0.1}
+                                />
+                                <div className="flex items-baseline gap-4 flex-wrap">
+                                    <TechnicalHeading
+                                        text="with a"
+                                        className="text-6xl md:text-7xl lg:text-[5.5rem]"
+                                        delay={0.4}
+                                    />
+                                    <motion.span
+                                        initial={{ opacity: 0, x: 20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 1, delay: 1 }}
+                                        className="text-brand-accent font-serif italic font-normal normal-case tracking-normal text-6xl md:text-7xl lg:text-[5.5rem]"
+                                    >
+                                        mother.
+                                    </motion.span>
+                                </div>
+                            </div>
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
-                                className="text-xl md:text-2xl text-brand-white/60 font-medium leading-relaxed max-w-xl"
+                                className="text-xl md:text-2xl text-brand-white/60 font-medium leading-relaxed max-w-xl border-l border-brand-accent/30 pl-8"
                             >
                                 Greg Polk spent two decades engineering systems for IBM. But his most important project was ensuring his mother could age with dignity in the home she loved.
                             </motion.p>
@@ -56,7 +70,7 @@ export default function StoryPage() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.3 }}
-                            className="lg:col-span-5 order-1 lg:order-2 relative aspect-[3/4] rounded-[40px] overflow-hidden border border-white/10 shadow-2xl group"
+                            className="lg:col-span-5 order-1 lg:order-2 relative aspect-[3/4] overflow-hidden border border-white/10 shadow-2xl group"
                         >
                             <Image
                                 src="/founder-greg-polk.png"
@@ -91,12 +105,12 @@ export default function StoryPage() {
                             <span className="text-brand-accent font-serif italic font-normal normal-case tracking-normal">Dignity.</span>
                         </h2>
 
-                        <div className="bg-white/5 border border-white/10 rounded-[40px] p-10 md:p-16 backdrop-blur-sm relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-accent/0 via-brand-accent to-brand-accent/0 opacity-50" />
+                        <div className="bg-white/5 border border-white/10 p-10 md:p-16 backdrop-blur-sm relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-[1px] bg-brand-accent opacity-50" />
 
                             <div className="space-y-8 text-lg md:text-xl text-brand-white/80 font-medium leading-relaxed">
                                 <p>
-                                    <span className="text-brand-accent font-black uppercase tracking-widest text-xs block mb-2">Subject: The Standard</span>
+                                    <span className="text-brand-accent font-black uppercase tracking-widest text-[10px] block mb-4">Subject: The Standard</span>
                                     I founded Polk Systems with a single client in mind: <span className="text-white">my mother.</span>
                                 </p>
                                 <p>
@@ -111,16 +125,17 @@ export default function StoryPage() {
                             </div>
 
                             <div className="mt-12 flex items-center gap-6 border-t border-white/10 pt-12">
-                                <Image
-                                    src="/founder-greg-polk.png"
-                                    alt="Signature"
-                                    width={64}
-                                    height={64}
-                                    className="rounded-full grayscale border border-white/20"
-                                />
+                                <div className="relative w-16 h-16 border border-white/20 overflow-hidden">
+                                    <Image
+                                        src="/founder-greg-polk.png"
+                                        alt="Signature"
+                                        fill
+                                        className="object-cover grayscale"
+                                    />
+                                </div>
                                 <div>
                                     <div className="text-sm font-black uppercase tracking-widest text-white">Greg Polk</div>
-                                    <div className="text-xs font-bold uppercase tracking-wider text-brand-white/40 mt-1">Filesystem Architect / Founder</div>
+                                    <div className="text-[10px] font-black uppercase tracking-wider text-brand-white/40 mt-2">Filesystem Architect / Founder</div>
                                 </div>
                             </div>
                         </div>
@@ -130,17 +145,17 @@ export default function StoryPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-32 relative z-10">
+            <section className="py-32 relative z-10 border-t border-white/5">
                 <Container className="text-center">
                     <Link
                         href="/contact"
                         className="inline-flex flex-col items-center group cursor-pointer"
                     >
-                        <span className="text-brand-accent text-xs font-black uppercase tracking-[0.4em] mb-6">Ready to begin?</span>
-                        <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-white group-hover:text-brand-accent transition-colors duration-500">
+                        <span className="text-brand-accent text-[10px] font-black uppercase tracking-[0.4em] mb-8">Ready to begin?</span>
+                        <h2 className="text-6xl md:text-9xl font-black uppercase tracking-tighter text-white group-hover:text-brand-accent transition-colors duration-500">
                             Build Your <br />Sanctuary.
                         </h2>
-                        <div className="mt-12 bg-white text-black px-12 py-6 rounded-full text-xs font-black uppercase tracking-widest group-hover:scale-110 transition-transform duration-300">
+                        <div className="mt-12 bg-white text-black px-12 py-6 text-[10px] font-black uppercase tracking-widest group-hover:bg-brand-accent group-hover:text-white transition-all duration-300">
                             Start Project ↘
                         </div>
                     </Link>
@@ -151,3 +166,4 @@ export default function StoryPage() {
         </div>
     );
 }
+
