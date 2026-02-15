@@ -76,7 +76,7 @@ export default function StoryPage() {
                                 src="/founder-greg-polk.png"
                                 alt="Greg Polk — Founder, Polk Systems"
                                 fill
-                                className="object-cover object-top hover:scale-105 transition-transform duration-[2000ms]"
+                                className="object-cover object-center hover:scale-105 transition-transform duration-[2000ms]"
                                 priority
                             />
                             {/* Subtle Grade */}
