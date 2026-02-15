@@ -42,3 +42,11 @@ next-env.d.ts
 
 # lead data (PII)
 /data
+
+# local database
+local.db
+local.db-shm
+local.db-wal
+
+# loki testing infra
+/.loki
