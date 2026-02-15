@@ -70,13 +70,13 @@ export default function StoryPage() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.3 }}
-                            className="lg:col-span-5 order-1 lg:order-2 relative aspect-[2/3] overflow-hidden border border-white/10 shadow-2xl group"
+                            className="lg:col-span-5 order-1 lg:order-2 relative aspect-square overflow-hidden border border-white/10 shadow-2xl group"
                         >
                             <Image
-                                src="/founder-greg-polk.png"
+                                src="/founder-avatar-bw.png"
                                 alt="Greg Polk — Founder, Polk Systems"
                                 fill
-                                className="object-cover object-top origin-top hover:scale-105 transition-transform duration-[2000ms]"
+                                className="object-cover object-center hover:scale-105 transition-transform duration-[2000ms]"
                                 priority
                             />
                             {/* Subtle Grade */}
