@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/Container";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import Image from "next/image";
+
 import Link from "next/link";
 
 export default function HowItWorksPage() {
@@ -57,10 +57,10 @@ export default function HowItWorksPage() {
                             </h2>
                             <div className="space-y-6 text-lg text-white/60 font-medium leading-relaxed">
                                 <p>
-                                    Buying a dozen "smart" lightbulbs doesn't make a smart home. It makes a maintenance headache.
+                                    Buying a dozen &quot;smart&quot; lightbulbs doesn&apos;t make a smart home. It makes a maintenance headache.
                                 </p>
                                 <p>
-                                    We don't install gadgets. We install building-grade infrastructure. Hardwired control panels, enterprise networking, and commercial sensors that disappear into the architecture.
+                                    We don&apos;t install gadgets. We install building-grade infrastructure. Hardwired control panels, enterprise networking, and commercial sensors that disappear into the architecture.
                                 </p>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ export default function HowItWorksPage() {
                             <span className="text-[10px] font-black uppercase tracking-widest text-white/20 mb-12 block group-hover:text-brand-accent transition-colors">01. The Local Brain</span>
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 text-brand-white leading-none">Zero Cloud.<br />Zero Lag.</h3>
                             <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
-                                Your home runs on a dedicated, physical server inside your utility closet. No internet required for daily operation. When you press a switch, the lights turn on instantly—even if the WiFi is down.
+                                Everything runs locally on a compact controller in your utility closet—taking up just a few inches. No internet required for daily operation. Your light switches work normally, but double-tap up or down (or multi-tap) to trigger automations and unlock custom actions.
                             </p>
                         </div>
 
@@ -116,7 +116,7 @@ export default function HowItWorksPage() {
                             <span className="text-[10px] font-black uppercase tracking-widest text-white/20 mb-12 block group-hover:text-brand-accent transition-colors">02. The Unified Logic</span>
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 text-brand-white leading-none">One App.<br />Not Twenty.</h3>
                             <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
-                                We integrate everything—lighting, climate, security, audio—into a single, elegant dashboard. No more "app fatigue." Just one simple interface that anyone in the family can use.
+                                We integrate everything—lighting, climate, security, audio—into a single, elegant dashboard. We take the smart stuff you already own and get it working together. If it has an app, we can probably pull it in. Less &quot;app fatigue,&quot; more &quot;why didn&apos;t it always work like this?&quot;
                             </p>
                         </div>
 

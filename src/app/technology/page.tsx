@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Footer } from "@/components/layout/Footer";
-import { motion } from "framer-motion";
+
 import { TechnicalHeading } from "@/components/core/TechnicalHeading";
 
 export default function TechnologyPage() {
@@ -40,7 +40,7 @@ export default function TechnologyPage() {
                                 <div>
                                     <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-accent mb-6">True Sovereignty</h3>
                                     <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose">
-                                        Your home is your sanctuary. By moving the "brain" of your smart home inside your walls, we remove the middleman. Forever.
+                                        Your home is your sanctuary. By moving the &quot;brain&quot; of your smart home inside your walls, we remove the middleman. Forever.
                                     </p>
                                 </div>
                                 <div>
@@ -102,23 +102,26 @@ export default function TechnologyPage() {
                         <div className="absolute top-0 left-0 w-full h-[1px] bg-brand-accent opacity-50 transition-opacity group-hover:opacity-100" />
 
                         <div className="relative z-10 max-w-4xl">
-                            <span className="text-brand-accent text-[10px] font-black uppercase tracking-[0.4em] mb-8 block">Encryption Protocol</span>
-                            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none">AES-256 <br /> <span className="text-white/20">Sovereignty.</span></h2>
+                            <div className="flex items-center gap-4 mb-8">
+                                <span className="text-brand-accent text-[10px] font-black uppercase tracking-[0.4em]">Encryption Protocol</span>
+                                <span className="border border-white/20 text-white/40 text-[9px] font-black uppercase tracking-widest px-3 py-1">Optional Add-On</span>
+                            </div>
+                            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none">AES-256 <br /> <span className="text-white/20">Remote Access.</span></h2>
                             <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-loose max-w-lg mb-12">
-                                Your node uses military-grade encryption at rest and in transit. We don't have the keys. Even if we were subpoenaed, your data remains yours and yours alone.
+                                Your system runs locally and privately by default—no internet required, no external access. For clients who want remote control of their home from outside, we can encrypt that internet connection using AES-256. Most users won&apos;t need it, but the option is there.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-12">
                                 <div>
+                                    <div className="text-4xl font-black text-white group-hover:text-brand-accent transition-colors tracking-tighter mb-2">LOCAL</div>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-white/30">Default_Operation</span>
+                                </div>
+                                <div>
+                                    <div className="text-4xl font-black text-white group-hover:text-brand-accent transition-colors tracking-tighter mb-2">AES-256</div>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-white/30">Remote_Access_(Optional)</span>
+                                </div>
+                                <div>
                                     <div className="text-4xl font-black text-white group-hover:text-brand-accent transition-colors tracking-tighter mb-2">0</div>
                                     <span className="text-[10px] font-black uppercase tracking-widest text-white/30">External_Cloud_Storage</span>
-                                </div>
-                                <div>
-                                    <div className="text-4xl font-black text-white group-hover:text-brand-accent transition-colors tracking-tighter mb-2">LOCAL</div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-white/30">Encrypted_Mesh_Node</span>
-                                </div>
-                                <div>
-                                    <div className="text-4xl font-black text-white group-hover:text-brand-accent transition-colors tracking-tighter mb-2">OFF</div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-white/30">WiFi_Dependency_V4</span>
                                 </div>
                             </div>
                         </div>

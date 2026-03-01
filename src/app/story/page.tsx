@@ -5,12 +5,12 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+
 
 import { TechnicalHeading } from "@/components/core/TechnicalHeading";
 
 export default function StoryPage() {
-    const [letterOpen, setLetterOpen] = useState(true);
+
 
     return (
         <div className="bg-brand-black min-h-screen text-brand-white selection:bg-brand-accent selection:text-black">
@@ -110,17 +110,17 @@ export default function StoryPage() {
 
                             <div className="space-y-8 text-lg md:text-xl text-brand-white/80 font-medium leading-relaxed">
                                 <p>
-                                    <span className="text-brand-accent font-black uppercase tracking-widest text-[10px] block mb-4">Subject: The Standard</span>
-                                    I founded Polk Systems with a single client in mind: <span className="text-white">my mother.</span>
+                                    <span className="text-brand-accent font-black uppercase tracking-widest text-[10px] block mb-4">From the Founder</span>
+                                    I&apos;m Greg Polk. I spent 20 years at IBM as an engineer, and after being laid off I chose to build a company around what I&apos;ve been passionate about for decades—<span className="text-white">home automation that feels effortless.</span>
                                 </p>
                                 <p>
-                                    I wanted to give her the ability to age in place comfortably, but I refused to compromise her dignity. We skipped the invasive "Big Brother" cameras and built a system that learns the home's heartbeat. It recognizes healthy patterns and notifies loved ones only when those patterns are broken.
+                                    This company is inspired by my mother. She doesn&apos;t want a house full of gadgets, screens, or complicated apps. She wants simple controls that still look beautiful and work every time. That&apos;s why we design automations that can be used the same way anyone already knows how to live in a home.
+                                </p>
+                                <p className="text-white text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight border-l-2 border-brand-accent pl-8">
+                                    If you can use a light switch, you can use my home automation.
                                 </p>
                                 <p>
-                                    Most importantly, I engineered this system to be <span className="text-white">independent of the internet.</span> It runs locally, meaning it works even when the Wi-Fi is down. Your data stays strictly within your walls. You own your history, and you can access it instantly—no delays, no cloud subscriptions, no privacy risks.
-                                </p>
-                                <p className="text-white pt-4">
-                                    This is the standard I set for my family. It is the standard I bring to yours.
+                                    After 25 years of building custom scripts and fine-tuning what &quot;easy&quot; really means, I turned that work into Polk Systems.
                                 </p>
                             </div>
 
