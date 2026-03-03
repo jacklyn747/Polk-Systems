@@ -21,15 +21,15 @@ const COMPARISON_POINTS = [
         icon: Cpu
     },
     {
-        feature: "Maintenance",
-        standard: "You restart routers weekly",
-        polk: "We monitor & patch remotely",
+        feature: "Maintenance and Changes",
+        standard: "Systems are installed and left static\u2014changes are handled case-by-case with billable visits.",
+        polk: "We treat your home like a living system, with an affordable monthly plan that includes ongoing optimization and changes.",
         icon: RefreshCw
     },
     {
         feature: "Control",
-        standard: "Fragmented (10+ Apps)",
-        polk: "Unified (1 App + Physical Controls)",
+        standard: "Every brand comes with its own app, login, and workflow.",
+        polk: "A single, integrated control layer with consistent behavior across the entire home.",
         icon: Smartphone
     }
 ];

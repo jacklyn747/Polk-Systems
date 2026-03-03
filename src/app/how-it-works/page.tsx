@@ -151,10 +151,10 @@ export default function HowItWorksPage() {
                     <div className="relative">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
                             {[
-                                { id: "01", title: "Discovery & Design", desc: "We analyze your floorplans and lifestyle needs to engineer a custom hardware map." },
-                                { id: "02", title: "Infrastructure Install", desc: "Our licensed technicians run structured cabling and install the local server core." },
-                                { id: "03", title: "Calibration", desc: "We program the automation logic, lighting scenes, and security perimeters." },
-                                { id: "04", title: "Handover", desc: "We train you on the system and hand over the \"Digital Keys\"—giving you full administrative ownership." }
+                                { id: "01", title: "Discovery & Design", desc: "We review your floorplans and lifestyle requirements to develop a tailored system design, including a complete hardware plan and any special integrations or constraints." },
+                                { id: "02", title: "Infrastructure Install", desc: "Our technician installs the on-site server core and deploys any required sensors, controllers, and supporting hardware specific to your environment." },
+                                { id: "03", title: "Calibration", desc: "We implement and fine-tune automation logic, lighting scenes, and security boundaries, then validate performance through real-world testing." },
+                                { id: "04", title: "Handover", desc: "We train you on daily use and administration, then transfer the \"Digital Keys,\" providing full system access and complete administrative ownership." }
                             ].map((step) => (
                                 <div key={step.id} className="p-10 bg-brand-black flex flex-col group hover:bg-white/5 transition-colors">
                                     <span className="text-brand-accent text-[10px] font-black uppercase tracking-widest mb-16 block">Protocol_{step.id}</span>
@@ -163,6 +163,20 @@ export default function HowItWorksPage() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </Container>
+            </section>
+
+            {/* One System. One Experience. */}
+            <section className="py-32 relative z-10 border-t border-white/10">
+                <Container>
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-[0.85]">
+                            One System. <br /><span className="text-brand-accent">One Experience.</span>
+                        </h2>
+                        <p className="text-lg md:text-xl text-white/60 font-medium leading-relaxed">
+                            Installing a pile of &quot;smart&quot; devices doesn&apos;t create a smart home&mdash;it creates disconnected apps. We fill the gaps and integrate what you already own so lighting, security, comfort, and energy operate as one coordinated system. Control it your way: voice, dashboard, schedules, or set-and-forget automation.
+                        </p>
                     </div>
                 </Container>
             </section>
